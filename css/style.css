@@ -394,6 +394,13 @@ h3 {
     linear-gradient(135deg, #24272c, #363b42 58%, #535852);
 }
 
+.art-sql {
+  background:
+    linear-gradient(0deg, rgba(104, 146, 122, 0.24), rgba(104, 146, 122, 0.24)) bottom / 100% 3px no-repeat,
+    radial-gradient(circle at 72% 26%, rgba(255, 255, 255, 0.08), transparent 20%),
+    linear-gradient(135deg, #1d2324, #273235 56%, #365057);
+}
+
 .project-body {
   padding: 1.25rem;
 }
