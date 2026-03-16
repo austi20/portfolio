@@ -652,6 +652,7 @@ h3 {
   grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
   gap: 1.25rem;
   margin-top: 1.5rem;
+  align-items: start;
 }
 
 .detail-main-stack,
@@ -715,6 +716,10 @@ h3 {
 .snippet-card,
 .related-card {
   padding: 1.3rem;
+}
+
+.sidebar-stack {
+  align-self: start;
 }
 
 .detail-list {
