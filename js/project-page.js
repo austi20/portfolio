@@ -28,37 +28,59 @@
     ].join("");
   }
 
-  function renderQuickFacts(facts) {
-    return facts.map(function (fact) {
+  function renderAtAGlance(cards) {
+    return (cards || []).map(function (card) {
       return [
         '<article class="fact-card">',
-        '  <p class="fact-label">' + escapeHtml(fact.label) + "</p>",
-        '  <p class="fact-value">' + escapeHtml(fact.value) + "</p>",
+        '  <p class="fact-label">' + escapeHtml(card.label) + "</p>",
+        '  <p class="fact-value">' + escapeHtml(card.value) + "</p>",
         "</article>"
       ].join("");
     }).join("");
   }
 
-  function renderTags(tags) {
-    return tags.map(function (tag) {
-      return "<li>" + escapeHtml(tag) + "</li>";
-    }).join("");
+  function renderSteps(steps) {
+    if (!steps || !steps.length) {
+      return "";
+    }
+
+    return [
+      '<div class="step-grid">',
+      steps.map(function (step, index) {
+        return [
+          '<article class="step-card">',
+          '  <span class="step-index">0' + (index + 1) + "</span>",
+          "  <h3>" + escapeHtml(step.title) + "</h3>",
+          "  <p>" + escapeHtml(step.description) + "</p>",
+          "</article>"
+        ].join("");
+      }).join(""),
+      "</div>"
+    ].join("");
   }
 
-  function renderReadmeSections(sections) {
-    return sections.map(function (section) {
-      return [
-        '<article class="readme-card">',
-        "  <h3>" + escapeHtml(section.title) + "</h3>",
-        renderParagraphs(section.paragraphs),
-        renderBullets(section.bullets),
-        "</article>"
-      ].join("");
-    }).join("");
+  function renderResultHighlights(highlights) {
+    if (!highlights || !highlights.length) {
+      return "";
+    }
+
+    return [
+      '<div class="signal-grid">',
+      highlights.map(function (highlight) {
+        return [
+          '<article class="signal-card">',
+          '  <p class="fact-label">' + escapeHtml(highlight.label) + "</p>",
+          '  <p class="signal-value">' + escapeHtml(highlight.value) + "</p>",
+          "  <p>" + escapeHtml(highlight.description) + "</p>",
+          "</article>"
+        ].join("");
+      }).join(""),
+      "</div>"
+    ].join("");
   }
 
   function renderSnippets(snippets) {
-    return snippets.map(function (snippet) {
+    return (snippets || []).map(function (snippet) {
       return [
         '<article class="snippet-card">',
         '  <div class="snippet-copy">',
@@ -93,7 +115,7 @@
           '<article class="related-card">',
           '  <p class="project-type">' + escapeHtml(project.cardType) + "</p>",
           "  <h3>" + escapeHtml(project.title) + "</h3>",
-          "  <p>" + escapeHtml(project.plainOverview) + "</p>",
+          '  <p class="related-copy">' + escapeHtml(project.heroSummary || project.plainOverview) + "</p>",
           '  <div class="project-actions">',
           '    <a class="button button-secondary button-small" href="' + escapeHtml(project.detailPage) + '">Open page</a>',
           '    <a class="project-link" href="' + escapeHtml(project.repoUrl) + '" target="_blank" rel="noreferrer">View repository</a>',
@@ -101,6 +123,22 @@
           "</article>"
         ].join("");
       }).join("");
+  }
+
+  function renderContentSection(title, content, extraClass) {
+    if (!content) {
+      return "";
+    }
+
+    return [
+      '<section class="detail-section' + (extraClass ? " " + extraClass : "") + '">',
+      "  <h2>" + escapeHtml(title) + "</h2>",
+      renderParagraphs(content.paragraphs),
+      renderBullets(content.bullets),
+      renderSteps(content.steps),
+      renderResultHighlights(content.highlights),
+      "  </section>"
+    ].join("");
   }
 
   var slug = document.body.getAttribute("data-project-slug");
@@ -126,70 +164,63 @@
   }
 
   document.title = project.title + " | Gunnar Austin";
+
   var portfolioAnchor = project.section === "coursework" ? "../index.html#coursework" : "../index.html#projects";
-  var pageLabel = project.section === "coursework" ? "Coursework Detail Page" : "Project Detail Page";
+  var pageLabel = project.section === "coursework" ? "Coursework Case Study" : "Project Case Study";
 
   mount.innerHTML = [
-    '<section class="detail-hero">',
+    '<section class="detail-hero detail-hero-polished">',
     '  <div class="detail-hero-copy">',
     '    <p class="eyebrow">' + escapeHtml(pageLabel) + "</p>",
     "    <h1>" + escapeHtml(project.title) + "</h1>",
-    '    <p class="hero-text">' + escapeHtml(project.plainOverview) + "</p>",
+    '    <p class="detail-deck">' + escapeHtml(project.heroSummary || project.plainOverview) + "</p>",
+    '    <div class="summary-callout">',
+    '      <p class="project-type">Executive summary</p>',
+    "      <p>" + escapeHtml(project.executiveSummary || project.plainOverview) + "</p>",
+    "    </div>",
     '    <div class="hero-actions">',
     '      <a class="button button-primary" href="' + escapeHtml(project.repoUrl) + '" target="_blank" rel="noreferrer">View repository</a>',
     '      <a class="button button-secondary" href="' + escapeHtml(portfolioAnchor) + '">Back to portfolio</a>',
     "    </div>",
     "  </div>",
     '  <aside class="detail-hero-card">',
-    '    <p class="profile-kicker">Quick facts</p>',
+    '    <p class="profile-kicker">At a glance</p>',
     '    <div class="fact-grid">',
-    renderQuickFacts(project.quickFacts),
-    "    </div>",
-    '    <div class="detail-tech-stack">',
-    '      <p class="project-type">Tools used</p>',
-    '      <ul class="tag-list" aria-label="Technologies">',
-    renderTags(project.technologies),
-    "      </ul>",
+    renderAtAGlance(project.atAGlance),
     "    </div>",
     "  </aside>",
     "</section>",
     '<section class="detail-grid">',
     '  <div class="detail-main-stack">',
-    '    <section class="detail-section">',
-    "      <h2>Plain-language overview</h2>",
-    "      <p>This page is written to explain the project without assuming the reader is familiar with GitHub, repository layouts, or notebook files.</p>",
-    renderParagraphs([
-      "The project link above still points to the original repository, but the summary here highlights the main idea, the most important results, and the parts of the README that matter most to a recruiter or non-technical reviewer."
-    ]),
-    "    </section>",
-    '    <section class="detail-section">',
-    "      <h2>" + escapeHtml(project.findingsHeading) + "</h2>",
-    renderBullets(project.findings),
-    "    </section>",
-    '    <section class="detail-section">',
-    "      <h2>Important README content</h2>",
-    '      <div class="readme-grid">',
-    renderReadmeSections(project.readmeSections),
-    "      </div>",
-    "    </section>",
-    '    <section class="detail-section">',
-    "      <h2>Code snippets that explain the project</h2>",
-    '      <p class="section-copy section-copy-tight">These are short excerpts chosen to show how the project works without requiring the viewer to read an entire notebook or script.</p>',
-    '      <div class="snippet-grid">',
+    renderContentSection("Project overview", project.overview),
+    renderContentSection("Business objective", project.objective),
+    renderContentSection("Dataset", project.dataset),
+    renderContentSection("Approach", project.approach),
+    renderContentSection("Results", project.results),
+    renderContentSection("Key insights", project.insights),
+    '<section class="detail-section">',
+    "  <h2>Code highlights</h2>",
+    '  <p class="section-copy section-copy-tight">These examples are intentionally short. They are included to show how the project works without overwhelming the reader with raw notebook or script output.</p>',
+    '  <div class="snippet-grid">',
     renderSnippets(project.snippets),
-    "      </div>",
-    "    </section>",
+    "  </div>",
+    "</section>",
+    '<section class="detail-section">',
+    "  <h2>Repository link</h2>",
+    renderParagraphs(project.repository && project.repository.paragraphs),
+    '  <a class="button button-primary" href="' + escapeHtml(project.repoUrl) + '" target="_blank" rel="noreferrer">Open repository</a>',
+    "</section>",
+    '<section class="detail-section">',
+    "  <h2>Next steps / future improvements</h2>",
+    renderParagraphs(project.nextSteps && project.nextSteps.paragraphs),
+    renderBullets(project.nextSteps && project.nextSteps.bullets),
+    "</section>",
     "  </div>",
     '  <aside class="sidebar-stack">',
     '    <section class="sidebar-panel">',
-    '      <p class="project-type">Repository access</p>',
-    "      <h3>Open the full source</h3>",
-    "      <p>The GitHub repository remains available for anyone who wants the original files, notebooks, SQL script, or assignment materials.</p>",
-    '      <a class="button button-primary button-full" href="' + escapeHtml(project.repoUrl) + '" target="_blank" rel="noreferrer">Open repository</a>',
-    "    </section>",
-    '    <section class="sidebar-panel">',
     '      <p class="project-type">Project navigation</p>',
-    "      <h3>Browse other work</h3>",
+    "      <h3>Browse project pages</h3>",
+    "      <p>Each project page is written as a portfolio case study, with the repository link still available whenever a reviewer wants the full source.</p>",
     '      <ul class="project-nav-list">',
     renderProjectLinks(projects, project.slug),
     "      </ul>",

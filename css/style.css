@@ -585,6 +585,25 @@ h3 {
   justify-content: center;
 }
 
+.detail-deck {
+  max-width: 44rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1.12rem;
+}
+
+.summary-callout {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.summary-callout p:last-child {
+  margin-bottom: 0;
+}
+
 .detail-hero-card {
   display: grid;
   gap: 1rem;
@@ -642,6 +661,52 @@ h3 {
 .related-grid {
   display: grid;
   gap: 1rem;
+}
+
+.step-grid,
+.signal-grid {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.signal-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.step-card,
+.signal-card {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.step-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.9rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--silver);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.step-card h3,
+.signal-card p:last-child {
+  margin-bottom: 0;
+}
+
+.signal-value {
+  margin: 0.3rem 0 0.7rem;
+  color: var(--text);
+  font-family: "Arial Black", "Trebuchet MS", sans-serif;
+  font-size: 1.15rem;
 }
 
 .detail-section,
@@ -802,7 +867,8 @@ h3 {
   .about-grid,
   .detail-hero,
   .detail-grid,
-  .related-grid {
+  .related-grid,
+  .signal-grid {
     grid-template-columns: 1fr;
   }
 

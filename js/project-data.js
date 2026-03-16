@@ -12,6 +12,129 @@
         "Built an end-to-end churn modeling workflow on more than 7,000 customer records, engineered retention-focused features, and compared logistic regression and random forest models using ROC AUC, recall, and feature importance analysis.",
       repoUrl: "https://github.com/austi20/Telco-Customer-Churn-Model",
       detailPage: "telco-customer-churn.html",
+      heroSummary:
+        "A recruiter-friendly case study on how machine learning can help a telecom company identify customers at risk of leaving and turn that analysis into practical retention actions.",
+      executiveSummary:
+        "This project predicts customer churn for a telecom provider using customer account, contract, service, and billing data. I cleaned the dataset, engineered retention-focused features, compared logistic regression with random forest, and translated the output into business guidance on which customers to prioritize and why.",
+      atAGlance: [
+        {
+          label: "Problem",
+          value: "Spot likely churn before revenue is lost"
+        },
+        {
+          label: "Methods",
+          value: "Data cleaning, feature engineering, model comparison"
+        },
+        {
+          label: "Outcome",
+          value: "Clear retention signals tied to contract type, tenure, and service mix"
+        }
+      ],
+      overview: {
+        paragraphs: [
+          "Customer churn is a practical business problem: when a customer leaves, the company loses future revenue and has to spend more to replace that account.",
+          "I framed this work as an applied analytics case study rather than a notebook exercise. The goal was not only to build a model, but to explain the results in a way that a business stakeholder could use."
+        ]
+      },
+      objective: {
+        paragraphs: [
+          "The business objective was to identify which customers were most likely to cancel service so a retention team could intervene earlier.",
+          "A useful solution needed to do two things well: rank customers by risk and explain which factors were most associated with churn."
+        ],
+        bullets: [
+          "Prioritize customers who are most likely to leave",
+          "Highlight the behaviors and account characteristics tied to churn",
+          "Turn model output into practical retention recommendations"
+        ]
+      },
+      dataset: {
+        paragraphs: [
+          "The project uses the IBM Telco Customer Churn dataset, which contains one record per customer and a final churn outcome of either yes or no.",
+          "The data covers customer demographics, contract terms, internet and support services, payment behavior, and billing totals. In plain terms, it gives a full picture of what a customer has, how they pay, and whether they stayed."
+        ],
+        bullets: [
+          "7,043 customer records",
+          "Target outcome: whether the customer churned",
+          "Fields include contract type, tenure, services used, monthly charges, and payment method"
+        ]
+      },
+      approach: {
+        paragraphs: [
+          "I kept the modeling process simple enough to explain, but structured enough to be credible as applied analytical work.",
+          "The workflow focused on preparing the data, creating features that were easier to interpret, testing two model types, and comparing the tradeoffs between them."
+        ],
+        steps: [
+          {
+            title: "Prepare the raw customer data",
+            description:
+              "I cleaned missing billing values, standardized text fields, and converted the churn outcome into a format the models could learn from."
+          },
+          {
+            title: "Engineer features that match the business problem",
+            description:
+              "I created features such as tenure bands, total services used, and new-customer flags so the analysis could reflect customer lifecycle and service adoption instead of only raw columns."
+          },
+          {
+            title: "Compare interpretable and pattern-driven models",
+            description:
+              "Logistic regression helped explain the strongest churn drivers, while random forest tested whether a more flexible model could improve overall classification performance."
+          }
+        ]
+      },
+      results: {
+        paragraphs: [
+          "The two models were useful in different ways. Logistic regression was strongest for ranking churn risk, while random forest gave the best overall balance for yes-or-no classification.",
+          "That matters in practice because a retention team may care more about a ranked outreach list in one setting and a balanced operational classifier in another."
+        ],
+        highlights: [
+          {
+            label: "Risk ranking",
+            value: "ROC AUC 0.847",
+            description:
+              "The logistic regression model did a strong job separating higher-risk customers from lower-risk customers, which is useful when deciding who should be contacted first."
+          },
+          {
+            label: "Classification balance",
+            value: "Accuracy 0.772",
+            description:
+              "The random forest model produced the best overall balance on yes-or-no churn predictions, making it the stronger all-purpose classifier in this project."
+          },
+          {
+            label: "Finding at-risk customers",
+            value: "Recall 0.794",
+            description:
+              "The logistic regression model caught most churn cases in the test set, which is important when the cost of missing a likely cancellation is high."
+          }
+        ]
+      },
+      insights: {
+        paragraphs: [
+          "The most valuable outcome of the project was not the model score alone. It was the ability to connect that score to business decisions a retention team could act on."
+        ],
+        bullets: [
+          "Month-to-month contracts were the clearest churn warning sign.",
+          "Short tenure mattered: newer customers were much more likely to leave than long-standing customers.",
+          "Electronic check payments, fiber internet, and missing support add-ons were associated with higher risk.",
+          "Longer contracts, especially two-year plans, were consistently tied to lower churn risk.",
+          "Why this matters: these patterns suggest targeted outreach, bundled support offers, and contract migration campaigns could reduce avoidable churn."
+        ]
+      },
+      repository: {
+        paragraphs: [
+          "The repository includes the full Python pipeline, notebook presentation, outputs, and supporting files. The link is kept visible for anyone who wants to review the original implementation in more detail."
+        ]
+      },
+      nextSteps: {
+        paragraphs: [
+          "If I continued this project, I would focus on making the model more decision-ready rather than only improving the score."
+        ],
+        bullets: [
+          "Tune decision thresholds around business cost, not only default model settings",
+          "Add probability calibration so risk scores are easier to trust operationally",
+          "Include customer value and retention cost to prioritize the most important accounts",
+          "Test additional models and cross-validation to strengthen confidence in the results"
+        ]
+      },
       plainOverview:
         "This project looks at which telecom customers are most likely to cancel service and why. It turns a machine learning notebook into a business-focused case study that a non-technical reader can follow from the problem to the recommendation.",
       quickFacts: [
@@ -107,6 +230,129 @@ metrics_df, fitted_models = evaluate_models(models, X_train, X_test, y_train, y_
         "Collaborative analysis of New York taxi demand, fares, tipping behavior, and trip duration using data cleaning, regression, and visualization to identify patterns across time, location, and trip characteristics.",
       repoUrl: "https://github.com/austi20/NYC-Taxi-Demand-and-Rider-Behavior-Analysis",
       detailPage: "nyc-taxi-demand.html",
+      heroSummary:
+        "A transportation analytics case study that examines when taxi demand rises, which routes are busiest, and what trip data can realistically predict about fares, duration, and tipping.",
+      executiveSummary:
+        "This project analyzes a January 2023 sample of NYC yellow taxi trips to understand rider behavior and service demand. I combined descriptive analysis, route exploration, and baseline predictive models to identify clear demand patterns, confirm that distance strongly shapes fares, and show that tipping is much harder to predict with a limited feature set.",
+      atAGlance: [
+        {
+          label: "Problem",
+          value: "Understand demand, rider behavior, and predictable trip outcomes"
+        },
+        {
+          label: "Methods",
+          value: "Exploratory analysis, route aggregation, regression, classification"
+        },
+        {
+          label: "Outcome",
+          value: "Clear demand patterns surfaced, but tipping remained difficult to predict"
+        }
+      ],
+      overview: {
+        paragraphs: [
+          "Taxi trip data can help answer practical operations questions: when does demand spike, which routes repeat most often, and which outcomes are easy to estimate from trip details?",
+          "This project presents that work as an applied case study for a general audience, turning a notebook-heavy analysis into a clearer business and operations narrative."
+        ]
+      },
+      objective: {
+        paragraphs: [
+          "The objective was to understand how time, location, distance, and rider choices relate to taxi demand, trip duration, fares, and tipping outcomes.",
+          "The project was designed to separate what the data explains well from what it does not explain well."
+        ],
+        bullets: [
+          "Identify when demand is strongest across the day and week",
+          "Find the routes that appear most often in the sample",
+          "Test whether trip-level data can support useful baseline predictions"
+        ]
+      },
+      dataset: {
+        paragraphs: [
+          "The repository uses a January 2023 sample of NYC yellow taxi trips plus a taxi zone lookup table that translates location IDs into recognizable pickup and drop-off areas.",
+          "The notebook focuses specifically on January 1 through January 14, 2023, so the findings should be read as a short-window case study rather than a full-year summary of citywide taxi demand."
+        ],
+        bullets: [
+          "Trip-level records with pickup time, distance, fare, passenger count, tip amount, and location IDs",
+          "Taxi zone lookup file for mapping route endpoints",
+          "Important limitation: short analysis window limits broader seasonal conclusions"
+        ]
+      },
+      approach: {
+        paragraphs: [
+          "I structured the work in layers so the page remains easy to skim: first describe the trip patterns, then test a few targeted predictive questions.",
+          "That approach makes it easier for a nontechnical reader to understand what the project learned before seeing any code."
+        ],
+        steps: [
+          {
+            title: "Map demand and route concentration",
+            description:
+              "I grouped trips by hour, day, weekday versus weekend, and pickup/drop-off pair to show where demand was concentrated and which routes repeated most often."
+          },
+          {
+            title: "Build simple predictive baselines",
+            description:
+              "I used baseline regression and classification models to test how much the trip-level features could explain fare amount, trip duration, and tip behavior."
+          },
+          {
+            title: "Interpret the limits of the data",
+            description:
+              "A key part of the project was showing where the models were informative and where the available variables were not strong enough to support reliable predictions."
+          }
+        ]
+      },
+      results: {
+        paragraphs: [
+          "The analysis produced a strong operational read on demand and route behavior, but the predictive results were mixed in a useful way.",
+          "That mix is important because it shows judgment: some business questions were answered clearly, while others would need richer data before being used for decisions."
+        ],
+        highlights: [
+          {
+            label: "Demand visibility",
+            value: "Strong hour and day patterns",
+            description:
+              "The data clearly showed when trips cluster, which is useful for staffing, availability planning, and understanding weekday versus weekend demand."
+          },
+          {
+            label: "Fare modeling",
+            value: "Distance was the strongest driver",
+            description:
+              "The fare model confirmed that trip distance carries most of the pricing signal in this sample, making it a strong baseline business variable."
+          },
+          {
+            label: "Tip prediction",
+            value: "Weak baseline performance",
+            description:
+              "The tipping model only performed slightly above chance, which suggests that rider payment and tipping behavior need richer features before they can be modeled confidently."
+          }
+        ]
+      },
+      insights: {
+        paragraphs: [
+          "The value of this project is not just that it found patterns, but that it clearly separated reliable signals from weak ones."
+        ],
+        bullets: [
+          "Demand varied meaningfully across the day and by weekday versus weekend timing.",
+          "A relatively small set of route pairs captured a large share of the busiest trips, showing concentrated route behavior rather than evenly distributed movement.",
+          "Fare amount was much easier to explain than tipping behavior.",
+          "Trip duration had moderate predictability, but not enough to treat the baseline as a production forecasting tool.",
+          "Why this matters: in applied analytics, knowing what not to overclaim is part of good decision support."
+        ]
+      },
+      repository: {
+        paragraphs: [
+          "The repository contains the notebook, setup notes, and supporting files behind the analysis. The repo link remains available for anyone who wants to inspect the original workflow in detail."
+        ]
+      },
+      nextSteps: {
+        paragraphs: [
+          "The clearest improvement path is to make the analysis more operational and less limited by the short time window."
+        ],
+        bullets: [
+          "Expand from a short January sample to a longer time horizon",
+          "Add richer location, route, and payment features to improve predictive models",
+          "Separate exploratory analysis from predictive modeling into cleaner modules",
+          "Test more flexible models after establishing stronger baseline features"
+        ]
+      },
       plainOverview:
         "This project studies how taxi rides behave across New York City by looking at when trips happen, which routes are busiest, how fares change, and how well basic models can predict trip outcomes. The page below turns the notebook into a clearer story for readers who are not used to browsing notebooks or GitHub files.",
       quickFacts: [
@@ -195,6 +441,129 @@ tip_clf.fit(X_train, y_train)`
         "Forecasting project exploring long-term rent and housing price trends across multiple countries. The work focused on cleaning time-series data, applying curve-based models, and comparing projected market movement through 2035.",
       repoUrl: "https://github.com/austi20/Global-Housing-Market-Predictor",
       detailPage: "global-housing-market.html",
+      heroSummary:
+        "A cross-country housing case study that compares price, rent, affordability, and GDP trends while treating long-range projections as directional decision support rather than exact forecasts.",
+      executiveSummary:
+        "This project compares housing pressure across more than 60 countries using price, rent, affordability, and GDP indicators from 2015 through 2024. I cleaned the time-series data, visualized the strongest and weakest markets, extended selected trends through 2035 with bounded curve fitting, and focused the write-up on what the analysis suggests, where it is helpful, and where it should not be overinterpreted.",
+      atAGlance: [
+        {
+          label: "Problem",
+          value: "Compare housing pressure across markets, not just one country"
+        },
+        {
+          label: "Methods",
+          value: "Trend analysis, cross-country comparison, directional extrapolation"
+        },
+        {
+          label: "Outcome",
+          value: "Affordability and GDP did not move together as simply as expected"
+        }
+      ],
+      overview: {
+        paragraphs: [
+          "Housing market pressure is multi-dimensional. High prices, rising rent, weak affordability, and economic growth do not always move in the same direction.",
+          "This project was built to compare those forces across many countries and communicate the differences in a way that is easy to review quickly."
+        ]
+      },
+      objective: {
+        paragraphs: [
+          "The objective was to identify which countries appeared most and least strained on key housing indicators and to explore how those trends might continue if current patterns persisted.",
+          "Just as important, the project aimed to show where forecasting becomes fragile and should be treated with caution."
+        ],
+        bullets: [
+          "Compare housing stress across countries using a shared set of indicators",
+          "Visualize how top and bottom markets differ over time",
+          "Use directional forecasting carefully without overstating precision"
+        ]
+      },
+      dataset: {
+        paragraphs: [
+          "The analysis is based on a country-level housing dataset covering more than 60 countries from 2015 to 2024. It focuses on four indicators: house price index, affordability ratio, rent index, and GDP growth.",
+          "One important limitation is that the CSV used in the notebook is not currently included in the public repository, so the repo functions more as a case-study showcase than a fully reproducible package today."
+        ],
+        bullets: [
+          "Country-level rather than city-level housing data",
+          "Four indicators used for comparison: prices, rent, affordability, GDP growth",
+          "Directional forecasting extends selected trends through 2035"
+        ]
+      },
+      approach: {
+        paragraphs: [
+          "The project combines descriptive analysis with cautious extrapolation. That structure helps the reader separate what is observed directly in the data from what is only projected forward.",
+          "The emphasis is on comparison and interpretation, not on claiming a production-ready forecast."
+        ],
+        steps: [
+          {
+            title: "Clean the country-level time series",
+            description:
+              "The notebook drops incomplete rows and standardizes the year field so countries can be compared consistently across the same indicators."
+          },
+          {
+            title: "Compare high-pressure and low-pressure markets",
+            description:
+              "For each metric, the analysis surfaces the countries at the high and low ends and uses side-by-side visualizations to make the differences easier to interpret."
+          },
+          {
+            title: "Extend trends carefully through 2035",
+            description:
+              "Selected indicators are extrapolated with bounded curve fitting so the project can explore directional movement without presenting the output as a precise market forecast."
+          }
+        ]
+      },
+      results: {
+        paragraphs: [
+          "The strongest result from this project is comparative insight rather than a single forecast number.",
+          "Across countries, the analysis showed that housing pressure cannot be explained by GDP growth alone and that some markets appear far more strained on rent and affordability than headline economic growth would suggest."
+        ],
+        highlights: [
+          {
+            label: "Market coverage",
+            value: "60+ countries",
+            description:
+              "The project created a broad international comparison, which makes it more useful for pattern recognition than a single-market case study."
+          },
+          {
+            label: "Affordability finding",
+            value: "GDP growth was not enough",
+            description:
+              "Some countries showed stronger economic growth without showing better affordability, which challenges a simple growth-equals-relief narrative."
+          },
+          {
+            label: "Forecast posture",
+            value: "Directional, not production-ready",
+            description:
+              "The project explicitly treats the 2035 projections as interpretive tools rather than as exact forward predictions."
+          }
+        ]
+      },
+      insights: {
+        paragraphs: [
+          "A major strength of this project is that it communicates both findings and limits clearly."
+        ],
+        bullets: [
+          "Housing pressure varied widely across countries even when growth trends looked similar.",
+          "Rent pressure appeared to rise fastest in some supply-constrained and urbanized markets.",
+          "Affordability did not improve automatically in countries with stronger GDP growth.",
+          "The notebook avoids overclaiming and points out where curve-based forecasting can behave poorly.",
+          "Why this matters: thoughtful analytical work includes both what the data suggests and what it cannot support confidently."
+        ]
+      },
+      repository: {
+        paragraphs: [
+          "The repository contains the notebook and presentation deck used for the project. The GitHub link remains available for anyone who wants to review the original exploratory workflow."
+        ]
+      },
+      nextSteps: {
+        paragraphs: [
+          "The strongest next step would be to make the project more reproducible and use forecasting methods that better match housing data behavior."
+        ],
+        bullets: [
+          "Add the source dataset or document a clean public download path",
+          "Move from directional curve fitting to stronger time-series modeling approaches",
+          "Add city-level or regional granularity where available",
+          "Create a cleaner separation between descriptive comparison and forecasting outputs"
+        ]
+      },
       plainOverview:
         "This project compares housing pressure across dozens of countries using price, rent, affordability, and GDP data. It mixes descriptive analysis with forward-looking projections through 2035, but it also makes clear that the forecast output should be used for interpretation rather than as a precise prediction tool.",
       quickFacts: [
@@ -284,6 +653,129 @@ housing_data["Year"] = housing_data["Year"].astype(int)`
         "Sales analysis project built on the Chinook SQLite database using joins, filtering, aggregation, a reusable view, monthly revenue reporting, and business-style queries to evaluate customer, country, genre, artist, and support rep performance.",
       repoUrl: "https://github.com/austi20/sql-sales-analysis-with-chinook",
       detailPage: "sql-sales-analysis.html",
+      heroSummary:
+        "A business reporting case study that uses SQL to answer practical sales questions and translate raw transactions into clear findings on customers, markets, products, and support performance.",
+      executiveSummary:
+        "This project analyzes the Chinook SQLite database as if it were a digital media business. I wrote readable SQL queries using joins, aggregation, a reusable view, a CTE, and a ranking query to identify top customers, strongest markets, leading genres, employee performance, and monthly sales patterns, then explained the results in plain business language.",
+      atAGlance: [
+        {
+          label: "Problem",
+          value: "Turn raw sales records into clear business reporting"
+        },
+        {
+          label: "Methods",
+          value: "SQL joins, aggregation, reusable views, CTEs, ranking"
+        },
+        {
+          label: "Outcome",
+          value: "Top market, genre, customer, and support patterns were surfaced quickly"
+        }
+      ],
+      overview: {
+        paragraphs: [
+          "Many hiring reviewers understand the business value of SQL faster than they understand technical syntax. This page presents the project as a reporting case study, not just a script of queries.",
+          "The analysis shows how structured SQL can move from transactional rows to decisions about markets, customers, products, and employee performance."
+        ]
+      },
+      objective: {
+        paragraphs: [
+          "The business objective was to answer common sales questions clearly and efficiently using a relational database.",
+          "The project was also meant to demonstrate communication: every major query is tied to a business question and an insight, not just a result table."
+        ],
+        bullets: [
+          "Identify the strongest customers, countries, genres, and artists",
+          "Review support-rep performance through both customer count and revenue",
+          "Summarize monthly sales trends in a way that a nontechnical reviewer can follow"
+        ]
+      },
+      dataset: {
+        paragraphs: [
+          "The project uses the Chinook SQLite sample database, which represents a digital media store. It contains customers, invoices, invoice lines, tracks, artists, genres, employees, and media types.",
+          "In practice, that means the data can connect every purchase back to who bought it, what they bought, where they were billed, and which employee supported the account."
+        ],
+        bullets: [
+          "412 invoices and 2,240 invoice lines analyzed",
+          "Customer, product, geography, and employee tables joined together",
+          "Total recorded revenue in the database: $2,328.60"
+        ]
+      },
+      approach: {
+        paragraphs: [
+          "The SQL was written to stay readable and layered. Instead of one oversized query, the project builds a set of understandable reporting blocks.",
+          "That structure makes the work easier to review and easier to explain to a stakeholder who cares more about the answer than the syntax."
+        ],
+        steps: [
+          {
+            title: "Start with foundational checks",
+            description:
+              "I first reviewed the shape of the data to confirm row counts, sample records, and the basic relationships between customers, invoices, and products."
+          },
+          {
+            title: "Build reusable reporting logic",
+            description:
+              "A customer sales summary view and a monthly sales CTE were used to keep repeated logic concise and easier to maintain."
+          },
+          {
+            title: "Translate output into business findings",
+            description:
+              "Each major query block was tied to a direct question, such as top markets or top genres, and followed by a short interpretation of what the result means."
+          }
+        ]
+      },
+      results: {
+        paragraphs: [
+          "The analysis surfaces a clear commercial picture of the sample business: where revenue is strongest, which products dominate, and how support ownership connects to sales.",
+          "Because the output is organized by business question, a reviewer can understand the value quickly without needing to parse SQL line by line."
+        ],
+        highlights: [
+          {
+            label: "Top market",
+            value: "USA: $523.06",
+            description:
+              "The United States generated the most revenue in the dataset, making it the clearest lead market in the analysis."
+          },
+          {
+            label: "Top genre",
+            value: "Rock: $826.65",
+            description:
+              "Genre sales showed that Rock was the dominant product category by both units sold and revenue contribution."
+          },
+          {
+            label: "Top support rep",
+            value: "Jane Peacock: $833.04",
+            description:
+              "Employee analysis connected support ownership back to customer revenue, showing Jane Peacock led the team on this measure."
+          }
+        ]
+      },
+      insights: {
+        paragraphs: [
+          "The project is strongest when it connects query output to a practical business story."
+        ],
+        bullets: [
+          "Revenue leadership was clear by country, with the USA materially ahead of the rest of the sample.",
+          "Rock dominated the catalog economically, suggesting the product mix was heavily concentrated.",
+          "Top customer spending was clustered rather than driven by a single extreme outlier.",
+          "Monthly sales were relatively steady, which suggests limited seasonality in this dataset.",
+          "Why this matters: SQL becomes more valuable when it supports decisions and communication, not only query correctness."
+        ]
+      },
+      repository: {
+        paragraphs: [
+          "The repository includes the SQL script, database file, and original README. The repo link stays visible for anyone who wants to review the underlying queries directly."
+        ]
+      },
+      nextSteps: {
+        paragraphs: [
+          "The next improvement would be to turn the static SQL analysis into a more complete reporting asset."
+        ],
+        bullets: [
+          "Add a lightweight dashboard or visual summary on top of the query outputs",
+          "Extend the analysis from revenue to margin or profitability if cost data were available",
+          "Add customer segmentation and cohort-style reporting",
+          "Automate recurring report generation from the query set"
+        ]
+      },
       plainOverview:
         "This project shows how SQL can answer common business questions from transactional sales data. Instead of asking a viewer to read a long SQL script directly, this page explains what each query block is trying to learn and what the major results say about the fictional music store in the dataset.",
       quickFacts: [
@@ -377,6 +869,129 @@ ORDER BY monthly_revenue DESC;`
         "A collection of Python coursework covering sorting algorithms, hash maps, unit testing, and implementation-focused programming assignments. It demonstrates correctness, problem decomposition, and a disciplined approach to writing and validating code.",
       repoUrl: "https://github.com/austi20/CSE331-SS26",
       detailPage: "cse331-coursework.html",
+      heroSummary:
+        "A structured repository of data-structure and algorithm assignments presented as evidence of tested implementation skill, careful problem solving, and strong software fundamentals.",
+      executiveSummary:
+        "This repository collects coursework from CSE 331 at Michigan State University, focused on algorithms and data structures in Python. Rather than treating it like a class archive, this page frames it as proof of implementation discipline: linked lists, hash tables, testing, and assignment-driven problem solving, with visible evidence of passing tests and strong project results.",
+      atAGlance: [
+        {
+          label: "Problem",
+          value: "Build reliable core data structures and prove correctness"
+        },
+        {
+          label: "Methods",
+          value: "Python implementations, tests, assignment specifications"
+        },
+        {
+          label: "Outcome",
+          value: "A clear record of foundational software engineering skill"
+        }
+      ],
+      overview: {
+        paragraphs: [
+          "This repository is different from the other project pages because it is not one application. Instead, it is a portfolio of implementation work that shows how core computer science concepts were translated into working code.",
+          "For a recruiter or hiring manager, the value is in the pattern: reading a spec, building the data structure correctly, and verifying the result with tests."
+        ]
+      },
+      objective: {
+        paragraphs: [
+          "The objective of the coursework was to build strong software foundations through implementation-focused assignments rather than only theory.",
+          "From a portfolio perspective, the value is that the repository shows consistency, correctness, and the ability to work through increasingly complex data structure problems."
+        ],
+        bullets: [
+          "Implement classic data structures correctly",
+          "Use tests and specifications to validate behavior",
+          "Demonstrate disciplined, readable Python problem solving"
+        ]
+      },
+      dataset: {
+        paragraphs: [
+          "This repository does not use a traditional dataset. Instead, the project materials are assignment specifications, starter files, tests, and finished Python solutions.",
+          "That still matters to a reviewer because it shows the inputs and constraints the code was built against, which makes the implementation process easier to evaluate."
+        ],
+        bullets: [
+          "Coding challenges and larger data-structure projects",
+          "Specifications, tests, and reflection files included in the repo tree",
+          "Visible scoring evidence in project readme files"
+        ]
+      },
+      approach: {
+        paragraphs: [
+          "The work in this repository is strongest when viewed as a progression of problem-solving maturity rather than as a single deliverable.",
+          "Assignments moved from basic pointer and structure operations to more complex hashing and application-style extensions."
+        ],
+        steps: [
+          {
+            title: "Implement the required data structures",
+            description:
+              "Projects included linked-list and hash-table work that required careful control over references, state, insertion, removal, lookup, and resizing behavior."
+          },
+          {
+            title: "Validate behavior with tests",
+            description:
+              "The repository includes unit tests and scored readme files, which makes correctness visible instead of asking the viewer to trust the implementation on appearance alone."
+          },
+          {
+            title: "Apply the structures to practical tasks",
+            description:
+              "Later exercises used the data structures in small applications, such as duplicate grouping and fan-chant matching, which shows transfer beyond textbook definitions."
+          }
+        ]
+      },
+      results: {
+        paragraphs: [
+          "The main result of this repository is evidence: the projects show that the code worked under assignment tests and that the complexity of the problems increased over time.",
+          "That is especially useful in a portfolio because foundational implementation skill is often harder to display than finished UI work."
+        ],
+        highlights: [
+          {
+            label: "Project 1",
+            value: "All listed tests passed",
+            description:
+              "The doubly linked list assignment passed the reported tests for insertion, removal, conversion, searching, reversing, and the application problem."
+          },
+          {
+            label: "Project 3",
+            value: "100 / 100",
+            description:
+              "The hash table project earned full credit, showing strong performance on both core table behavior and the related application tasks."
+          },
+          {
+            label: "Language consistency",
+            value: "Python repository",
+            description:
+              "The repository provides a concentrated view of implementation growth in one language, which makes it easier to review progression and style."
+          }
+        ]
+      },
+      insights: {
+        paragraphs: [
+          "What makes this repository useful in a recruiting context is how clearly it shows software fundamentals."
+        ],
+        bullets: [
+          "The code demonstrates careful handling of low-level structure behavior, not just high-level scripting.",
+          "Tests and scoring evidence make correctness more visible than a typical course repo summary would.",
+          "The assignments progress from basic structure operations to more advanced hashing and application-style extensions.",
+          "The repository shows the ability to read specifications and implement exactly against them.",
+          "Why this matters: strong software fundamentals make later analytics, machine learning, and application work more reliable."
+        ]
+      },
+      repository: {
+        paragraphs: [
+          "The GitHub repository remains available for anyone who wants to inspect the assignment structure, tests, and full solutions in more detail."
+        ]
+      },
+      nextSteps: {
+        paragraphs: [
+          "The clearest improvement would be to make the repository easier for an outside reviewer to scan without prior course context."
+        ],
+        bullets: [
+          "Add a root-level README that summarizes the strongest assignments and lessons learned",
+          "Create a higher-level index of projects, topics, and test results",
+          "Add short reflective notes on time complexity and tradeoffs for the major structures",
+          "Surface a few representative test cases for faster reviewer understanding"
+        ]
+      },
       plainOverview:
         "This repository is a structured collection of university programming assignments from CSE 331 at Michigan State. It is less like a single app and more like a record of how core computer science skills were built through implementation work, test-driven validation, and increasingly complex data structure problems.",
       quickFacts: [
