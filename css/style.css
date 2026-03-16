@@ -659,7 +659,8 @@ h3 {
 .sidebar-stack,
 .readme-grid,
 .snippet-grid,
-.related-grid {
+.related-grid,
+.visual-grid {
   display: grid;
   gap: 1rem;
 }
@@ -786,6 +787,41 @@ h3 {
   background: rgba(255, 255, 255, 0.03);
 }
 
+.visual-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.visual-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1.3rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.visual-frame {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)),
+    rgba(12, 14, 18, 0.72);
+}
+
+.visual-image {
+  width: 100%;
+  border-radius: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.visual-copy {
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.visual-copy p:last-child {
+  margin-bottom: 0;
+}
+
 .snippet-copy p:last-child,
 .readme-card p:last-child,
 .related-card p:last-child,
@@ -873,7 +909,8 @@ h3 {
   .detail-hero,
   .detail-grid,
   .related-grid,
-  .signal-grid {
+  .signal-grid,
+  .visual-grid {
     grid-template-columns: 1fr;
   }
 

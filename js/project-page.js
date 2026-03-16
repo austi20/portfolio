@@ -93,6 +93,39 @@
     }).join("");
   }
 
+  function renderVisualSections(sections, placement) {
+    return (sections || [])
+      .filter(function (section) {
+        return section.placement === placement;
+      })
+      .map(function (section) {
+        return [
+          '<section class="detail-section visual-section">',
+          "  <h2>" + escapeHtml(section.title) + "</h2>",
+          section.intro
+            ? '  <p class="section-copy section-copy-tight">' + escapeHtml(section.intro) + "</p>"
+            : "",
+          '  <div class="visual-grid">',
+          (section.figures || []).map(function (figure) {
+            return [
+              '    <figure class="visual-card">',
+              '      <div class="visual-frame">',
+              '        <img class="visual-image" src="' + escapeHtml(figure.src) + '" alt="' + escapeHtml(figure.alt) + '" loading="lazy" decoding="async">',
+              "      </div>",
+              '      <figcaption class="visual-copy">',
+              figure.title ? '        <p class="project-type">' + escapeHtml(figure.title) + "</p>" : "",
+              "        <p>" + escapeHtml(figure.caption) + "</p>",
+              "      </figcaption>",
+              "    </figure>"
+            ].join("");
+          }).join(""),
+          "  </div>",
+          "</section>"
+        ].join("");
+      })
+      .join("");
+  }
+
   function renderProjectLinks(projects, currentSlug) {
     return projects.map(function (project) {
       var currentClass = project.slug === currentSlug ? " is-current-page" : "";
@@ -193,11 +226,17 @@
     '<section class="detail-grid">',
     '  <div class="detail-main-stack">',
     renderContentSection("Project overview", project.overview),
+    renderVisualSections(project.visualSections, "after-overview"),
     renderContentSection("Business objective", project.objective),
+    renderVisualSections(project.visualSections, "after-objective"),
     renderContentSection("Dataset", project.dataset),
+    renderVisualSections(project.visualSections, "after-dataset"),
     renderContentSection("Approach", project.approach),
+    renderVisualSections(project.visualSections, "after-approach"),
     renderContentSection("Results", project.results),
+    renderVisualSections(project.visualSections, "after-results"),
     renderContentSection("Key insights", project.insights),
+    renderVisualSections(project.visualSections, "after-insights"),
     '<section class="detail-section">',
     "  <h2>Code highlights</h2>",
     '  <p class="section-copy section-copy-tight">These examples are intentionally short. They are included to show how the project works without overwhelming the reader with raw notebook or script output.</p>',

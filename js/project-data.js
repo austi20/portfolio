@@ -112,13 +112,45 @@
           "The most valuable outcome of the project was not the model score alone. It was the ability to connect that score to business decisions a retention team could act on."
         ],
         bullets: [
-          "Month-to-month contracts were the clearest churn warning sign.",
-          "Short tenure mattered: newer customers were much more likely to leave than long-standing customers.",
-          "Electronic check payments, fiber internet, and missing support add-ons were associated with higher risk.",
-          "Longer contracts, especially two-year plans, were consistently tied to lower churn risk.",
-          "Why this matters: these patterns suggest targeted outreach, bundled support offers, and contract migration campaigns could reduce avoidable churn."
+          "Retention efforts should start with month-to-month customers, especially during the first year of service.",
+          "Payment method and service bundle choices added useful context beyond contract length alone.",
+          "Longer contracts looked materially more stable, which makes plan migration a realistic retention lever.",
+          "The model comparison was most useful because it supported both prioritization and explanation, not just prediction.",
+          "Why this matters: the project turns churn scores into a more focused outreach strategy instead of a generic customer list."
         ]
       },
+      visualSections: [
+        {
+          placement: "after-approach",
+          title: "Behavior patterns before modeling",
+          intro:
+            "I placed this figure here because it shows the raw customer patterns that informed the later feature engineering and retention framing.",
+          figures: [
+            {
+              src: "../assets/projects/telco-customer-churn/customer-churn-behavior-analysis.png",
+              alt: "Composite churn chart showing overall churn counts, churn rate by contract type, tenure distribution by churn status, and monthly charges by churn status.",
+              title: "Customer behavior snapshot",
+              caption:
+                "These charts show that churn was much more common among month-to-month customers and newer accounts, with higher monthly charges showing up more often for customers who left. It matters because those patterns explain why contract length, tenure, and billing signals became key inputs in the model."
+            }
+          ]
+        },
+        {
+          placement: "after-results",
+          title: "Model comparison visuals",
+          intro:
+            "This figure sits after the results section because it makes the tradeoff between the two model choices easy to see at a glance.",
+          figures: [
+            {
+              src: "../assets/projects/telco-customer-churn/customer-churn-model-performance.png",
+              alt: "Model comparison figure with a performance bar chart, confusion matrices for logistic regression and random forest, and an ROC curve comparison.",
+              title: "Prediction tradeoff",
+              caption:
+                "This comparison shows a practical tradeoff instead of one perfect winner: logistic regression separated higher- and lower-risk customers slightly better, while random forest was more balanced on straight yes-or-no predictions. That matters because a retention team may want ranking for outreach lists or cleaner classification for day-to-day operations."
+            }
+          ]
+        }
+      ],
       repository: {
         paragraphs: [
           "The repository includes the full Python pipeline, notebook presentation, outputs, and supporting files. The link is kept visible for anyone who wants to review the original implementation in more detail."
@@ -330,13 +362,45 @@ metrics_df, fitted_models = evaluate_models(models, X_train, X_test, y_train, y_
           "The value of this project is not just that it found patterns, but that it clearly separated reliable signals from weak ones."
         ],
         bullets: [
-          "Demand varied meaningfully across the day and by weekday versus weekend timing.",
-          "A relatively small set of route pairs captured a large share of the busiest trips, showing concentrated route behavior rather than evenly distributed movement.",
-          "Fare amount was much easier to explain than tipping behavior.",
-          "Trip duration had moderate predictability, but not enough to treat the baseline as a production forecasting tool.",
-          "Why this matters: in applied analytics, knowing what not to overclaim is part of good decision support."
+          "Demand patterns were clear enough to support staffing and availability planning.",
+          "A relatively small set of routes appeared repeatedly, suggesting traffic was concentrated in a few common corridors.",
+          "Distance worked well as a baseline input for fare estimation, but error remained too wide for exact quoting.",
+          "Trip duration and tipping both exposed the limits of the short-window feature set.",
+          "Why this matters: the project shows when simple models are useful and when they should stay in a decision-support role."
         ]
       },
+      visualSections: [
+        {
+          placement: "after-approach",
+          title: "Trip pattern snapshot",
+          intro:
+            "This figure works best right after the approach because it shows the basic relationship the duration analysis was trying to capture before discussing model limits.",
+          figures: [
+            {
+              src: "../assets/projects/nyc-taxi-demand/trip-duration-vs-distance.png",
+              alt: "Scatter plot of taxi trip duration in minutes versus trip distance in miles with a regression line.",
+              title: "Distance versus duration",
+              caption:
+                "This plot shows that longer trips usually take more time, but there is still a wide spread for many distances because traffic and route conditions vary. It matters because distance is a helpful baseline feature without being enough to predict duration precisely on its own."
+            }
+          ]
+        },
+        {
+          placement: "after-results",
+          title: "Fare regression check",
+          intro:
+            "I placed this diagnostic view after the results because it supports the claim that distance carries useful signal while still leaving visible error in the baseline model.",
+          figures: [
+            {
+              src: "../assets/projects/nyc-taxi-demand/trip-distance-regression-diagnostics.png",
+              alt: "Regression diagnostics for taxi fare versus trip distance showing fitted values, residuals, and partial regression plots.",
+              title: "Distance as a pricing signal",
+              caption:
+                "These diagnostics show a clear positive link between trip distance and fare, but they also reveal noise and some large misses around the trend line. That matters because the regression is useful for direction and baseline pricing logic, not for treating every estimate as exact."
+            }
+          ]
+        }
+      ],
       repository: {
         paragraphs: [
           "The repository contains the notebook, setup notes, and supporting files behind the analysis. The repo link remains available for anyone who wants to inspect the original workflow in detail."
@@ -541,13 +605,30 @@ tip_clf.fit(X_train, y_train)`
           "A major strength of this project is that it communicates both findings and limits clearly."
         ],
         bullets: [
-          "Housing pressure varied widely across countries even when growth trends looked similar.",
-          "Rent pressure appeared to rise fastest in some supply-constrained and urbanized markets.",
-          "Affordability did not improve automatically in countries with stronger GDP growth.",
-          "The notebook avoids overclaiming and points out where curve-based forecasting can behave poorly.",
-          "Why this matters: thoughtful analytical work includes both what the data suggests and what it cannot support confidently."
+          "Country comparisons were more informative than any single projected number.",
+          "Top and bottom markets were separated by both typical price level and spread, not just rank order.",
+          "Rent outlooks were most useful for comparing relative pressure across markets, not exact future values.",
+          "Affordability still failed to move in lockstep with GDP growth.",
+          "Why this matters: the project uses forecasting as planning input without presenting it as certainty."
         ]
       },
+      visualSections: [
+        {
+          placement: "after-approach",
+          title: "Comparing stronger and weaker housing markets",
+          intro:
+            "This comparison fits after the approach because it shows how the project separated high-pressure and low-pressure markets before moving into broader conclusions.",
+          figures: [
+            {
+              src: "../assets/projects/global-housing-market/house-price-index-distribution.png",
+              alt: "Two box-plot panels comparing house price index distributions for the top five and bottom five countries through 2035.",
+              title: "House price spread by market group",
+              caption:
+                "These box plots compare the spread of projected house price levels in the highest- and lowest-pressure country groups. They matter because they show both rank and volatility, which helps separate consistently expensive markets from markets that swing more widely."
+            }
+          ]
+        }
+      ],
       repository: {
         paragraphs: [
           "The repository contains the notebook and presentation deck used for the project. The GitHub link remains available for anyone who wants to review the original exploratory workflow."
