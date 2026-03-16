@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gunnar Austin | Data Science Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/project-data.js"></script>
+  <script defer src="js/index.js"></script>
   <link rel="icon" type="image/png" href="https://portfolio.gunnar-austin.workers.dev/assets/favicon.png">
   <meta
     name="description"
@@ -104,127 +106,12 @@
           <h2>Personal Projects</h2>
           <p class="section-copy">
             A selection of personal work focused on predictive modeling, SQL, data analysis,
-            and applied programming. These projects highlight how I approach real datasets,
-            evaluate technical solutions, and communicate results clearly.
+            and applied programming. Each project keeps its GitHub repository link on this page
+            and now also has a dedicated website page written for non-technical visitors.
           </p>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-art art-churn" aria-hidden="true">
-              <span>ML</span>
-            </div>
-            <div class="project-body">
-              <p class="project-type">Machine Learning Case Study</p>
-              <h3>Telco Customer Churn Prediction</h3>
-              <p>
-                Built an end-to-end churn modeling workflow on more than 7,000 customer
-                records, engineered retention-focused features, and compared logistic
-                regression and random forest models using ROC AUC, recall, and feature
-                importance analysis.
-              </p>
-              <ul class="tag-list" aria-label="Technologies">
-                <li>Python</li>
-                <li>pandas</li>
-                <li>scikit-learn</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/austi20/Telco-Customer-Churn-Model"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View repository
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-art art-urban" aria-hidden="true">
-              <span>DA</span>
-            </div>
-            <div class="project-body">
-              <p class="project-type">Data Analysis and Modeling</p>
-              <h3>NYC Taxi Demand and Rider Behavior Analysis</h3>
-              <p>
-                Collaborative analysis of New York taxi demand, fares, tipping behavior,
-                and trip duration using data cleaning, regression, and visualization to
-                identify patterns across time, location, and trip characteristics.
-              </p>
-              <ul class="tag-list" aria-label="Technologies">
-                <li>Jupyter</li>
-                <li>pandas</li>
-                <li>matplotlib</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/austi20/NYC-Taxi-Demand-and-Rider-Behavior-Analysis"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View repository
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-art art-housing" aria-hidden="true">
-              <span>FM</span>
-            </div>
-            <div class="project-body">
-              <p class="project-type">Forecasting and Market Analysis</p>
-              <h3>Global Housing Market Forecasting</h3>
-              <p>
-                Forecasting project exploring long-term rent and housing price trends
-                across multiple countries. The work focused on cleaning time-series data,
-                applying curve-based models, and comparing projected market movement
-                through 2035.
-              </p>
-              <ul class="tag-list" aria-label="Technologies">
-                <li>Python</li>
-                <li>NumPy</li>
-                <li>Matplotlib</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/austi20/Global-Housing-Market-Predictor"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View repository
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-art art-sql" aria-hidden="true">
-              <span>SQL</span>
-            </div>
-            <div class="project-body">
-              <p class="project-type">SQL and Sales Analysis</p>
-              <h3>SQL Sales Analysis with Chinook</h3>
-              <p>
-                Sales analysis project built on the Chinook SQLite database using joins,
-                filtering, aggregation, a reusable view, monthly revenue reporting, and
-                business-style queries to evaluate customer, country, genre, artist, and
-                support rep performance.
-              </p>
-              <ul class="tag-list" aria-label="Technologies">
-                <li>SQL</li>
-                <li>SQLite</li>
-                <li>Data Analysis</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/austi20/sql-sales-analysis-with-chinook"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View repository
-              </a>
-            </div>
-          </article>
-        </div>
+        <div class="project-grid" id="project-grid"></div>
       </section>
 
       <section class="about-section" id="coursework">
@@ -239,24 +126,7 @@
         </div>
 
         <div class="about-grid">
-          <div class="about-panel">
-            <p class="coursework-type">Algorithms and Data Structures</p>
-            <h3>CSE 331 Coursework Repository</h3>
-            <p>
-              A collection of Python coursework covering sorting algorithms, hash maps,
-              unit testing, and implementation-focused programming assignments. It
-              demonstrates correctness, problem decomposition, and a disciplined approach
-              to writing and validating code.
-            </p>
-            <a
-              class="project-link"
-              href="https://github.com/austi20/CSE331-SS26"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View repository
-            </a>
-          </div>
+          <div class="about-panel" id="coursework-detail-card"></div>
 
           <div class="about-panel focus-panel">
             <h3>Core Focus Areas</h3>
