@@ -9,7 +9,7 @@
       badge: "ML",
       technologies: ["Python", "pandas", "scikit-learn"],
       landingSummary:
-        "Built an end-to-end churn modeling workflow on more than 7,000 customer records, engineered retention-focused features, and compared logistic regression and random forest models using ROC AUC, recall, and feature importance analysis.",
+        "End-to-end churn modeling case study using 7,000+ customer records to engineer retention signals, compare classification models, and translate risk patterns into practical business actions.",
       repoUrl: "https://github.com/austi20/Telco-Customer-Churn-Model",
       detailPage: "telco-customer-churn.html",
       heroSummary:
@@ -253,13 +253,13 @@ metrics_df, fitted_models = evaluate_models(models, X_train, X_test, y_train, y_
     {
       slug: "nyc-taxi-demand",
       section: "projects",
-      cardType: "Data Analysis and Modeling",
+      cardType: "Operations Analytics Case Study",
       title: "NYC Taxi Demand and Rider Behavior Analysis",
       artClass: "art-urban",
       badge: "DA",
       technologies: ["Jupyter", "pandas", "matplotlib"],
       landingSummary:
-        "Collaborative analysis of New York taxi demand, fares, tipping behavior, and trip duration using data cleaning, regression, and visualization to identify patterns across time, location, and trip characteristics.",
+        "Transportation analytics project using trip-level taxi data to examine demand patterns, route concentration, fare drivers, and the limits of baseline prediction in an operational setting.",
       repoUrl: "https://github.com/austi20/NYC-Taxi-Demand-and-Rider-Behavior-Analysis",
       detailPage: "nyc-taxi-demand.html",
       heroSummary:
@@ -502,7 +502,7 @@ tip_clf.fit(X_train, y_train)`
       badge: "FM",
       technologies: ["Python", "NumPy", "Matplotlib"],
       landingSummary:
-        "Forecasting project exploring long-term rent and housing price trends across multiple countries. The work focused on cleaning time-series data, applying curve-based models, and comparing projected market movement through 2035.",
+        "Cross-country forecasting analysis comparing housing prices, rent pressure, affordability, and GDP trends with a measured approach to long-range projections through 2035.",
       repoUrl: "https://github.com/austi20/Global-Housing-Market-Predictor",
       detailPage: "global-housing-market.html",
       heroSummary:
@@ -725,13 +725,13 @@ housing_data["Year"] = housing_data["Year"].astype(int)`
     {
       slug: "sql-sales-analysis",
       section: "projects",
-      cardType: "SQL and Sales Analysis",
+      cardType: "Business Intelligence with SQL",
       title: "SQL Sales Analysis with Chinook",
       artClass: "art-sql",
       badge: "SQL",
       technologies: ["SQL", "SQLite", "Data Analysis"],
       landingSummary:
-        "Sales analysis project built on the Chinook SQLite database using joins, filtering, aggregation, a reusable view, monthly revenue reporting, and business-style queries to evaluate customer, country, genre, artist, and support rep performance.",
+        "SQL reporting case study that turns transactional sales data into clear findings on customer value, market performance, product mix, and support ownership.",
       repoUrl: "https://github.com/austi20/sql-sales-analysis-with-chinook",
       detailPage: "sql-sales-analysis.html",
       heroSummary:
@@ -941,13 +941,13 @@ ORDER BY monthly_revenue DESC;`
     {
       slug: "cse331-coursework",
       section: "coursework",
-      cardType: "Algorithms and Data Structures",
+      cardType: "Software Engineering Foundations",
       title: "CSE 331 Coursework Repository",
       artClass: "art-coursework",
       badge: "CS",
       technologies: ["Python", "Data Structures", "Unit Testing"],
       landingSummary:
-        "A collection of Python coursework covering sorting algorithms, hash maps, unit testing, and implementation-focused programming assignments. It demonstrates correctness, problem decomposition, and a disciplined approach to writing and validating code.",
+        "Python coursework repository covering data structures, testing, and implementation-focused assignments that demonstrate correctness, problem decomposition, and disciplined engineering habits.",
       repoUrl: "https://github.com/austi20/CSE331-SS26",
       detailPage: "cse331-coursework.html",
       heroSummary:
