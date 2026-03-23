@@ -23,6 +23,7 @@
   --radius-lg: 14px;
   --radius-md: 10px;
   --radius-sm: 8px;
+  --page-gutter: clamp(1rem, 2.5vw, 2rem);
 }
 
 html {
@@ -30,13 +31,18 @@ html {
   font-size: 16px;
   line-height: 1.5;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  min-height: 100dvh;
   font-family: "Public Sans", "Segoe UI", sans-serif;
   color: var(--text);
+  overflow-x: hidden;
+  background-color: var(--bg-page);
   background:
     radial-gradient(circle at top left, rgba(28, 79, 131, 0.04), transparent 22%),
     linear-gradient(180deg, #ffffff 0%, #fbfcfe 50%, #f5f8fb 100%);
@@ -83,14 +89,19 @@ pre code {
 }
 
 .page-shell {
-  width: min(1200px, calc(100% - 2rem));
+  width: min(1360px, 100%);
   margin: 0 auto;
-  padding: 1.2rem 0 4.5rem;
+  box-sizing: border-box;
+  padding:
+    max(1rem, env(safe-area-inset-top))
+    calc(var(--page-gutter) + env(safe-area-inset-right))
+    max(4rem, calc(env(safe-area-inset-bottom) + 2rem))
+    calc(var(--page-gutter) + env(safe-area-inset-left));
 }
 
 .site-header {
   position: sticky;
-  top: 1rem;
+  top: max(0.75rem, env(safe-area-inset-top));
   z-index: 20;
   display: flex;
   align-items: center;
@@ -102,6 +113,10 @@ pre code {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   box-shadow: 0 8px 24px rgba(16, 32, 51, 0.06);
+}
+
+main {
+  width: 100%;
 }
 
 .brand {
@@ -152,6 +167,7 @@ pre code {
   flex-wrap: wrap;
   gap: 0.9rem;
   align-items: center;
+  min-width: 0;
 }
 
 .site-nav a {
@@ -207,6 +223,15 @@ pre code {
   grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.82fr);
   gap: 1.4rem;
   align-items: stretch;
+}
+
+.hero > *,
+.project-grid > *,
+.about-grid > *,
+.detail-hero > *,
+.visual-grid > *,
+.related-grid > * {
+  min-width: 0;
 }
 
 .hero-copy,
@@ -326,6 +351,7 @@ h2,
 h3 {
   font-family: "Libre Baskerville", Georgia, serif;
   color: #142335;
+  overflow-wrap: anywhere;
 }
 
 h1 {
@@ -405,13 +431,21 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.hero-actions > *,
+.contact-links > *,
+.project-actions > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
+  min-height: 3.125rem;
   padding: 0 1.15rem;
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
@@ -606,6 +640,8 @@ h3 {
   color: var(--muted-strong);
   text-decoration: none;
   font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .project-link::after {
@@ -688,6 +724,7 @@ h3 {
   color: var(--muted-strong);
   font-weight: 600;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .project-page {
@@ -697,7 +734,7 @@ h3 {
 
 .detail-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.8fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.8fr);
   gap: 1.25rem;
   padding: clamp(1.45rem, 3vw, 2.2rem);
   border-radius: var(--radius-xl);
@@ -709,6 +746,12 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.detail-hero h1 {
+  max-width: 15ch;
+  font-size: clamp(2.45rem, 4.8vw, 4.1rem);
+  text-wrap: balance;
 }
 
 .detail-deck {
@@ -836,6 +879,10 @@ h3 {
   padding: 0;
 }
 
+pre {
+  max-width: 100%;
+}
+
 .snippet-copy {
   padding: 1.35rem 1.35rem 0.95rem;
 }
@@ -952,24 +999,41 @@ h3 {
   .about-grid,
   .visual-grid,
   .related-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .hero-actions,
+  .contact-links,
+  .project-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  }
+
+  .project-link {
+    justify-content: center;
+    min-height: 3.125rem;
+    padding: 0.7rem 0.95rem;
+    border: 1px solid rgba(16, 32, 51, 0.12);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.8);
   }
 }
 
 @media only screen and (max-width: 760px) {
   .page-shell {
-    width: min(100% - 1rem, 1200px);
-    padding-bottom: 3rem;
+    padding:
+      max(0.75rem, env(safe-area-inset-top))
+      calc(0.875rem + env(safe-area-inset-right))
+      max(2.5rem, calc(env(safe-area-inset-bottom) + 1.5rem))
+      calc(0.875rem + env(safe-area-inset-left));
   }
 
   .site-header {
-    top: 0.5rem;
-    border-radius: 1.5rem;
-    padding: 0.95rem;
-  }
-
-  .brand {
-    width: 100%;
+    top: max(0.35rem, env(safe-area-inset-top));
+    gap: 0.85rem;
+    padding: 0.85rem;
   }
 
   .site-header,
@@ -979,7 +1043,20 @@ h3 {
   }
 
   .site-nav {
-    gap: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .site-nav a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: rgba(251, 252, 253, 0.98);
   }
 
   .hero-copy,
@@ -1003,21 +1080,21 @@ h3 {
   }
 
   .profile-frame {
-    min-height: 300px;
-  }
-
-  .profile-facts {
-    grid-template-columns: 1fr;
+    min-height: 280px;
   }
 
   h1 {
     max-width: none;
-    font-size: clamp(2.3rem, 12vw, 3.8rem);
+    font-size: clamp(2.2rem, 11vw, 3.4rem);
+  }
+
+  .detail-hero h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
   h2 {
     max-width: none;
-    font-size: clamp(1.75rem, 8vw, 2.4rem);
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
   }
 
   .hero-actions,
@@ -1032,9 +1109,44 @@ h3 {
     width: 100%;
   }
 
+  .project-link {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  pre {
+    padding: 0.9rem 1rem;
+  }
+
+  pre code {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .hero-meta,
+  .tag-list {
+    gap: 0.5rem;
+  }
+
+  .hero-meta li,
+  .tag-list li {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
   .contact-list li {
     align-items: flex-start;
     justify-content: flex-start;
+  }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .site-header {
+    background: #ffffff;
   }
 }
 
