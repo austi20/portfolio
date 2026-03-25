@@ -943,131 +943,135 @@ ORDER BY monthly_revenue DESC;`
       section: "coursework",
       cardType: "Course Report",
       title: "CSE 331 Class Report",
+      pageLabel: "Coursework Evidence",
       artClass: "art-coursework",
       badge: "CS",
       technologies: ["Python", "Data Structures", "Unit Testing"],
       landingSummary:
-        "Coursework evidence for analytics and data science roles, focused on tested Python implementations, efficient data structures, and performance aware problem solving.",
+        "Coursework evidence built around linked lists, hash tables, and recursive tree problems, with tested Python implementations that support later analytics and data science work.",
       repoUrl: "https://github.com/austi20/CSE331-SS26",
       detailPage: "cse331-coursework.html",
       heroSummary:
-        "CSE 331 is supporting evidence for my data science work, efficient structures, tested implementation, and clear reasoning about scale.",
+        "CSE 331 covers the kind of technical foundation work behind reliable analytics, linked structures, hashing, recursion, and careful reasoning about correctness and performance.",
       executiveSummary:
-        "The course focused on building algorithms and data structures from scratch in Python, then proving correctness with tests, which is the same foundation that supports reliable analytics, modeling, and data pipeline work.",
+        "The strongest parts of this coursework are the assignments themselves: a doubly linked list project with multilevel flattening, a hash table built from scratch with lookup driven applications, and recursive tree problems that required branch traversal and bottom up evaluation.",
       atAGlance: [
         {
-          label: "Course focus",
-          value: "Algorithms, data structures, and tested Python work"
+          label: "Core work",
+          value: "Linked lists, hash tables, recursion, and testing"
         },
         {
           label: "Best evidence",
-          value: "Project 1, Project 3, and tree based coding challenges"
+          value: "Project 1, Project 3, and CC7 and CC8"
         },
         {
-          label: "Why it matters",
-          value: "Stronger data handling, better performance judgment, clearer validation"
+          label: "Recruiter payoff",
+          value: "Concrete proof of implementation depth behind later analytics work"
         }
       ],
+      sectionTitles: {
+        repository: "Repository access"
+      },
       skillMap: {
         title: "Course topics and analytics relevance",
         intro:
-          "This is the fastest way to read the page. The coursework matters because each topic connects to a practical part of analytics and data science work.",
+          "The assignments below map directly to common analytics tasks, especially data handling, grouping, traversal, and validation.",
         columns: ["Course topic", "Why it matters in analytics"],
         rows: [
           {
             topic: "Linked lists",
-            relevance: "Strengthens structural thinking for ordered data, nested data, and careful state updates."
+            relevance: "Built comfort with ordered transformations, nested structures, pointer updates, and edge case handling."
           },
           {
             topic: "Hash tables",
-            relevance: "Supports fast lookup, grouping, and deduplication, which show up often in data cleaning and feature preparation."
+            relevance: "Strengthened fast lookup, grouping, deduplication, normalization logic, and performance aware design."
           },
           {
             topic: "Trees and recursion",
-            relevance: "Builds skill in hierarchical traversal, structured transformations, and bottom up evaluation."
+            relevance: "Built hierarchical traversal, decomposition, and bottom up reasoning for structured transformations."
           }
         ]
       },
       overview: {
         paragraphs: [
-          "This page treats CSE 331 as a concise course report, not as a polished homework explanation. The main value is that it shows where the technical discipline behind the rest of the portfolio came from."
+          "The coursework centered on building core data structures and recursive algorithms directly in Python. The most useful assignments required maintaining structure integrity, meeting explicit complexity targets, and solving application style problems on top of those structures."
         ]
       },
       objective: {
         paragraphs: [
-          "The course objective was to implement foundational structures directly, meet explicit complexity targets, and verify behavior with tests."
+          "The assignments required more than getting the right answer. They had to maintain correct internal state, handle edge cases cleanly, and stay within explicit time and space constraints."
         ],
         bullets: [
-          "Implement core structures and algorithms under explicit complexity constraints",
-          "Use tests, specs, and score reports to verify correctness",
-          "Build habits that transfer well to analytics and machine learning work"
+          "Implement linked structures, hash based storage, and recursive tree logic from scratch",
+          "Preserve correctness under insertion, deletion, resizing, traversal, and flattening edge cases",
+          "Validate behavior with tests and complexity requirements instead of informal inspection"
         ]
       },
       dataset: {
         paragraphs: [
-          "This page does not center on a traditional dataset. The source material is the assignment set itself, specs, tests, starter code, finished solutions, and score reports."
+          "Evaluation came from unit tests, application problems, and explicit complexity rules. That meant the work had to be correct on visible cases and still hold up under stricter behaviors such as pointer integrity, collision handling, recursive traversal, and resizing logic."
         ],
         bullets: [
-          "Coding Challenges folder for focused algorithm exercises",
-          "Projects folder for larger implementations such as doubly linked lists and hash tables",
-          "README score reports that make testing outcomes visible"
+          "Projects were graded on core operations and applied extension tasks",
+          "Coding challenges tested focused recursive reasoning on binary trees",
+          "Complexity targets were part of the assignment requirements, not an afterthought"
         ]
       },
       quickFacts: [
-        { label: "Project 1", value: "All listed tests passed" },
-        { label: "Project 3", value: "100 out of 100" },
-        { label: "Role fit", value: "Analytics and data science foundation" }
+        { label: "Project 1", value: "Doubly linked lists and multilevel flattening" },
+        { label: "Project 3", value: "Hash tables, duplicate grouping, and substring search" },
+        { label: "CC7 and CC8", value: "Recursive tree traversal and expression evaluation" }
       ],
       findingsHeading: "Why recruiters should care",
       findings: [
-        "This page shows I can build core structures from scratch, not just use libraries.",
-        "Hashing, recursion, and complexity targets map directly to data cleaning, grouping, and structured transformations.",
-        "Passing tests across linked lists and a full credit hash table project provides credible proof of correctness."
+        "Built core structures from scratch instead of relying only on library abstractions.",
+        "Handled pointer updates, hashing behavior, recursion, and complexity limits in code that had to stay correct across edge cases.",
+        "Used the same skills that support scalable grouping, deduplication, traversal, and structured transformations in analytics work."
       ],
       approach: {
         paragraphs: [
-          "The clearest way to read the course is through a small set of assignments that connect directly to applied technical work."
+          "Three parts of the coursework are the strongest evidence here because they combine real implementation depth with skills that transfer directly into analytics and data science work."
         ],
         steps: [
           {
             title: "Project 1: doubly linked lists and multilevel flattening",
             description:
-              "Project 1 focused on insertion, removal, reversal, and multilevel flattening. It is relevant because hierarchical structures and ordered transformations appear often in real data work."
+              "This project required implementing core doubly linked list operations such as insertion, removal, reversal, list conversion, search, and multilevel flattening. The difficult part was keeping head, tail, next, and prev relationships correct across empty lists, single node cases, middle removals, and nested child lists. It built skill in ordered transformations and nested structure handling, which matters when data work involves staged reshaping rather than one flat table."
           },
           {
             title: "Project 3: hash tables and lookup driven applications",
             description:
-              "Project 3 required implementing a hash table from scratch, then applying it to duplicate image detection and substring search. That maps well to data work because fast lookup, grouping, and pattern matching are common pipeline tasks."
+              "This project required building a hash table from scratch, including insertion, lookup, deletion, resizing, and collision handling, then using it in duplicate image grouping and substring permutation search. The technical challenge was making hashing behavior, probing, and growth logic work consistently while preserving fast lookup. It reinforced grouping, normalization, deduplication, and performance aware design, all of which show up in scalable data tasks."
           },
           {
             title: "Coding Challenges 7 and 8: recursive tree reasoning",
             description:
-              "CC7 asked for branch sum traversal on a binary tree, while CC8 evaluated arithmetic formula trees. Together they show recursive decomposition, ordered traversal, and bottom up computation."
+              "CC7 used recursion to traverse binary trees and compute branch sums from root to leaf. CC8 evaluated arithmetic expression trees from the leaves upward using operator nodes and operand nodes. Together they built comfort with hierarchical traversal, decomposition, and bottom up evaluation, which supports structured transformations and tree based logic."
           }
         ]
       },
       results: {
         paragraphs: [
-          "The strongest outcomes are visible in the assignment reports and in the progression from basic structure operations to more applied hashing and tree problems."
+          "The work proved that the implementations were not only conceptually correct, but reliable under tests and explicit constraints. The strongest evidence comes from how the assignments combined core structure behavior with application style tasks."
         ],
         highlights: [
           {
             label: "Project 1",
             value: "All listed tests passed",
             description:
-              "The README reports passing every listed test for the doubly linked list assignment, including insertion, removal, conversion, searching, reversing, and the multilevel dream_escaper application."
+              "The linked list implementation held up across insertion, removal, conversion, search, reverse, and the multilevel flattening task, which is useful proof that pointer updates and structure integrity stayed correct across edge cases."
           },
           {
             label: "Project 3",
             value: "100 out of 100",
             description:
-              "The hash table project earned full credit across core table operations plus both applied tasks, display_duplicates and generate_fan_chants."
+              "The hash table earned full credit across core table behavior and both application tasks, which supports the underlying implementation rather than replacing it."
           },
           {
             label: "Selected CCs",
             value: "Tree traversal and evaluation",
             description:
-              "CC7 and CC8 extend the course beyond containers into recursive tree processing, reinforcing traversal logic and computational reasoning."
+              "The recursive tree challenges reinforced traversal order, leaf handling, and bottom up computation instead of only container operations."
           }
         ]
       },
@@ -1076,95 +1080,95 @@ ORDER BY monthly_revenue DESC;`
         items: [
           {
             label: "Technical challenge",
-            value: "Meet strict complexity targets",
+            value: "Keep structure logic correct under edge cases",
             description:
-              "The difficult part was handling nested pointers, resizing behavior, and recursion without drifting into slower solutions."
+              "The hardest parts were pointer updates in linked lists, collision handling and growth logic in hash tables, and recursive evaluation without losing traversal order or complexity discipline."
           },
           {
             label: "What success proved",
-            value: "Tests made correctness visible",
+            value: "Tests supported the implementation details",
             description:
-              "Project 1 passed all listed tests and Project 3 earned 100 out of 100, so the page shows validated implementation rather than course notes."
+              "Project 1 passed all listed tests and Project 3 earned 100 out of 100, which adds concrete proof after the assignment content instead of standing in for it."
           }
         ]
       },
       insights: {
         paragraphs: [
-          "The course matters in this portfolio because it supports the applied work with stronger technical judgment."
+          "The connection to analytics is strongest when the assignment details are viewed as technical building blocks rather than as academic exercises."
         ],
         bullets: [
-          "Repeated complexity targets build the habit of asking whether a solution will still hold up as inputs grow.",
-          "Hash table work supports grouping, deduplication, and lookup heavy tasks in data preparation.",
-          "Tree and recursion work supports hierarchical traversal and structured transformations.",
-          "Tests and score reports mirror the need to validate analytics workflows before trusting the output."
+          "Linked list work strengthened ordered transformations, nested structure handling, and careful state management.",
+          "Hash table work maps directly to fast lookup, grouping, normalization, and deduplication in data preparation.",
+          "Recursive tree work strengthened hierarchical traversal and bottom up reasoning for structured logic.",
+          "Complexity constraints built the habit of asking whether a solution still performs as inputs grow."
         ]
       },
       portfolioConnections: {
         title: "Where this shows up elsewhere",
         intro:
-          "This coursework is not isolated from the rest of the portfolio. The same habits show up again in the applied analytics projects.",
+          "The same implementation habits show up again in the applied projects, especially when data has to be grouped, reshaped, validated, or judged for computational tradeoffs.",
         items: [
           {
             slug: "telco-customer-churn",
             label: "Applied connection",
             title: "Telco Customer Churn Prediction",
             description:
-              "Feature engineering and model evaluation are more reliable when the underlying data handling and validation habits are strong."
+              "Feature engineering, validation, and model comparison are stronger when the underlying data handling habits are built on careful state management and correctness checks."
           },
           {
             slug: "nyc-taxi-demand",
             label: "Applied connection",
             title: "NYC Taxi Demand and Rider Behavior Analysis",
             description:
-              "Grouping routes, testing baseline models, and judging model limits rely on the same structured reasoning built in CSE 331."
+              "Route grouping, baseline modeling, and judging model limits rely on the same structured reasoning behind hashing, traversal, and explicit tradeoff analysis."
           }
         ]
       },
       repository: {
         paragraphs: [
-          "The GitHub repository is available for anyone who wants to inspect the assignment specs, test files, solution code, and score reports behind this course summary."
+          "The repository link is included for anyone who wants to inspect the assignment specs, tests, and implementation details directly."
         ]
       },
       nextSteps: {
         paragraphs: [
-          "The best next improvement would be to make the repository faster for an outside reviewer to scan."
+          "A stronger version of the repository would surface the best assignment screenshots, test snapshots, and implementation notes faster for reviewers."
         ],
         bullets: [
-          "Add a root level summary that links each assignment to the skill it built",
-          "Surface a few representative tests near the top of the repository",
-          "Add short reflections on where each assignment supports later analytics or machine learning work"
+          "Add a root level summary that highlights Project 1, Project 3, CC7, and CC8 first",
+          "Surface a few representative tests and complexity expectations near the top",
+          "Add short notes on the hardest implementation decisions in each assignment"
         ]
       },
       plainOverview:
-        "This CSE 331 repository is best read as a short report on algorithmic foundations. It shows tested Python work in linked lists, hash tables, and trees that supports the more applied analytics projects elsewhere in the portfolio.",
+        "This CSE 331 repository is strongest as recruiter facing coursework evidence, linked lists, hash tables, and recursive tree problems implemented directly in Python and backed by testing.",
       readmeSections: [
         {
-          title: "How the course evidence is organized",
+          title: "What the repository contains",
           paragraphs: [
             "The repository is divided into Coding Challenges and Projects rather than one application folder.",
-            "That split makes it easier to separate focused algorithm drills from larger implementation assignments."
+            "The strongest material is the linked list project, the hash table project, and the recursive tree coding challenges."
           ]
         },
         {
           title: "Assignments most relevant to data science",
           bullets: [
-            "Project 1 doubly linked lists, including multilevel flattening tied in the spec to pandas style structures",
-            "Project 3 hash tables, duplicate image grouping, and substring search",
-            "CC7 branch sums and CC8 formula tree evaluation for recursive binary tree reasoning"
+            "Project 1, doubly linked list operations, pointer integrity, and multilevel flattening",
+            "Project 3, hash table behavior, duplicate image grouping, and substring search",
+            "CC7 and CC8, recursive traversal, branch sums, and formula tree evaluation"
           ]
         },
         {
-          title: "Why this matters for a portfolio",
+          title: "Technical takeaway",
           paragraphs: [
-            "This material shows that the data work elsewhere in the portfolio rests on more than notebooks and libraries. It is backed by coursework in performance, structure design, and verified implementation."
+            "The value here is implementation depth. These assignments required direct work with structure behavior, recursion, and performance constraints that support later analytics and software tasks."
           ]
         },
         {
-          title: "Visible evidence in the repository",
+          title: "Supporting proof",
           bullets: [
-            "Project 1 README reports all listed doubly linked list tests passing",
-            "Project 3 README reports a total score of 100 out of 100",
-            "The repository language summary is fully Python"
+            "Project 1 passed all listed tests",
+            "Project 3 earned 100 out of 100",
+            "The repository is fully Python, which makes implementation style easy to review"
           ]
         }
       ],
@@ -1173,7 +1177,7 @@ ORDER BY monthly_revenue DESC;`
           title: "Project 1: constant time linked list insertion",
           language: "python",
           explanation:
-            "This method captures one of the course's core themes, update structure state carefully and keep the operation O(1). That mindset carries into data engineering work where the shape and cost of a transformation both matter.",
+            "This method shows the kind of pointer work the linked list assignment required. Head, tail, next, and prev references all have to stay consistent while keeping insertion O(1).",
           code: `def push(self, val, back=True):
     new = Node(val)
     if self.size == 0:
@@ -1192,7 +1196,7 @@ ORDER BY monthly_revenue DESC;`
           title: "Project 3: hashing for duplicate image grouping",
           language: "python",
           explanation:
-            "This application highlights a more direct bridge to data science work. It normalizes rotated image signatures, uses hashing for fast lookup, and groups duplicates under the earliest canonical file.",
+            "This application uses hashing to normalize rotated image signatures, find the first canonical file, and group duplicates under that key. It is a good example of lookup logic supporting grouping and deduplication at scale.",
           code: `for hashes, filename in zip(data, filenames):
     rotations = [tuple(hashes[i:] + hashes[:i]) for i in range(len(hashes))]
     signature = str(min(rotations))

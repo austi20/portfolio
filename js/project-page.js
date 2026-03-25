@@ -351,18 +351,19 @@
 
   var isCoursework = project.section === "coursework";
   var portfolioAnchor = isCoursework ? "../index.html#coursework" : "../index.html#projects";
-  var pageLabel = isCoursework ? "Course Report" : "Project Case Study";
-  var sectionLabels = isCoursework
+  var defaultPageLabel = isCoursework ? "Course Report" : "Project Case Study";
+  var pageLabel = project.pageLabel || defaultPageLabel;
+  var defaultSectionLabels = isCoursework
     ? {
-        overview: "Course overview",
-        objective: "Learning objective",
-        dataset: "Source materials",
-        approach: "Representative coursework",
-        results: "Outcomes",
-        insights: "Relevance to data science",
+        overview: "What I built",
+        objective: "What the coursework required",
+        dataset: "How the work was evaluated",
+        approach: "Key assignments and coding challenges",
+        results: "What the work proved",
+        insights: "Why this matters in analytics",
         codeHighlights: "Selected coursework highlights",
         repository: "Repository",
-        nextSteps: "Report improvements"
+        nextSteps: "What I would improve"
       }
     : {
         overview: "Project overview",
@@ -375,6 +376,7 @@
         repository: "Repository link",
         nextSteps: "Next steps / future improvements"
       };
+  var sectionLabels = Object.assign({}, defaultSectionLabels, project.sectionTitles || {});
 
   // Each HTML page ships with fallback content so this script acts as progressive enhancement rather than the only source of meaning.
   mount.innerHTML = [
