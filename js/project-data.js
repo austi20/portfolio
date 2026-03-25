@@ -952,9 +952,9 @@ ORDER BY monthly_revenue DESC;`
       repoUrl: "https://github.com/austi20/CSE331-SS26",
       detailPage: "cse331-coursework.html",
       heroSummary:
-        "CSE 331 covers the kind of technical foundation work behind reliable analytics, linked structures, hashing, recursion, and careful reasoning about correctness and performance.",
+        "CSE 331 focused on building linked structures, hash tables, and recursive tree logic directly in Python, with careful attention to correctness, edge cases, and performance.",
       executiveSummary:
-        "The strongest parts of this coursework are the assignments themselves: a doubly linked list project with multilevel flattening, a hash table built from scratch with lookup driven applications, and recursive tree problems that required branch traversal and bottom up evaluation.",
+        "The strongest coursework here is the actual implementation work: doubly linked list operations with multilevel flattening, a hash table built from scratch with lookup based applications, and recursive tree problems built around branch traversal and formula evaluation.",
       atAGlance: [
         {
           label: "Core work",
@@ -994,12 +994,12 @@ ORDER BY monthly_revenue DESC;`
       },
       overview: {
         paragraphs: [
-          "The coursework centered on building core data structures and recursive algorithms directly in Python. The most useful assignments required maintaining structure integrity, meeting explicit complexity targets, and solving application style problems on top of those structures."
+          "I implemented core data structures and recursive algorithms directly in Python, then extended them into application style problems. The work included pointer heavy linked list operations, hash table behavior under collisions and resizing, and recursive traversal on binary trees."
         ]
       },
       objective: {
         paragraphs: [
-          "The assignments required more than getting the right answer. They had to maintain correct internal state, handle edge cases cleanly, and stay within explicit time and space constraints."
+          "The coursework required correct internal state, clean edge case handling, and explicit time and space discipline, not just output that looked right on small examples."
         ],
         bullets: [
           "Implement linked structures, hash based storage, and recursive tree logic from scratch",
@@ -1025,8 +1025,8 @@ ORDER BY monthly_revenue DESC;`
       findingsHeading: "Why recruiters should care",
       findings: [
         "Built core structures from scratch instead of relying only on library abstractions.",
-        "Handled pointer updates, hashing behavior, recursion, and complexity limits in code that had to stay correct across edge cases.",
-        "Used the same skills that support scalable grouping, deduplication, traversal, and structured transformations in analytics work."
+        "Worked through pointer integrity, collision handling, recursion, and complexity limits in code that had to stay correct across edge cases.",
+        "Applied those structures to grouping, duplicate detection, traversal, and search problems that transfer cleanly into analytics work."
       ],
       approach: {
         paragraphs: [
@@ -1052,26 +1052,26 @@ ORDER BY monthly_revenue DESC;`
       },
       results: {
         paragraphs: [
-          "The work proved that the implementations were not only conceptually correct, but reliable under tests and explicit constraints. The strongest evidence comes from how the assignments combined core structure behavior with application style tasks."
+          "The most useful proof is not the score alone, it is that each assignment combined core structure behavior with a harder applied task and still held up under tests and explicit constraints."
         ],
         highlights: [
           {
             label: "Project 1",
-            value: "All listed tests passed",
+            value: "Doubly linked list operations and multilevel flattening",
             description:
-              "The linked list implementation held up across insertion, removal, conversion, search, reverse, and the multilevel flattening task, which is useful proof that pointer updates and structure integrity stayed correct across edge cases."
+              "Implemented insertion, removal, reversal, list conversion, search, and flattening across multilevel nodes, with careful pointer updates and structure integrity across edge cases. All listed tests passed."
           },
           {
             label: "Project 3",
-            value: "100 out of 100",
+            value: "Hash table implementation and lookup based applications",
             description:
-              "The hash table earned full credit across core table behavior and both application tasks, which supports the underlying implementation rather than replacing it."
+              "Built a hash table from scratch, then applied it to duplicate image grouping and substring permutation search, reinforcing fast lookup, grouping, normalization logic, and performance aware design. The project earned 100 out of 100."
           },
           {
             label: "Selected CCs",
-            value: "Tree traversal and evaluation",
+            value: "Branch sums and formula tree evaluation",
             description:
-              "The recursive tree challenges reinforced traversal order, leaf handling, and bottom up computation instead of only container operations."
+              "Used recursion to traverse binary trees, compute branch sums, and evaluate arithmetic expression trees, strengthening hierarchical traversal and bottom up reasoning. The challenge set was validated under explicit test cases."
           }
         ]
       },
@@ -1094,19 +1094,18 @@ ORDER BY monthly_revenue DESC;`
       },
       insights: {
         paragraphs: [
-          "The connection to analytics is strongest when the assignment details are viewed as technical building blocks rather than as academic exercises."
+          "These assignments transfer well into analytics because they build the habits behind reliable data work, careful transformations, lookup speed, and structured reasoning."
         ],
         bullets: [
           "Linked list work strengthened ordered transformations, nested structure handling, and careful state management.",
           "Hash table work maps directly to fast lookup, grouping, normalization, and deduplication in data preparation.",
-          "Recursive tree work strengthened hierarchical traversal and bottom up reasoning for structured logic.",
-          "Complexity constraints built the habit of asking whether a solution still performs as inputs grow."
+          "Recursive tree work strengthened hierarchical traversal and bottom up reasoning for structured logic."
         ]
       },
       portfolioConnections: {
         title: "Where this shows up elsewhere",
         intro:
-          "The same implementation habits show up again in the applied projects, especially when data has to be grouped, reshaped, validated, or judged for computational tradeoffs.",
+          "The same implementation habits show up again in the applied projects when data has to be grouped, reshaped, validated, or judged for computational tradeoffs.",
         items: [
           {
             slug: "telco-customer-churn",
