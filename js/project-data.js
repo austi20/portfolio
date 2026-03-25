@@ -941,189 +941,189 @@ ORDER BY monthly_revenue DESC;`
     {
       slug: "cse331-coursework",
       section: "coursework",
-      cardType: "Algorithms and Data Structures",
-      title: "CSE 331 Coursework Repository",
+      cardType: "Course Report",
+      title: "CSE 331 Class Report",
       artClass: "art-coursework",
       badge: "CS",
       technologies: ["Python", "Data Structures", "Unit Testing"],
       landingSummary:
-        "A collection of Python coursework covering sorting algorithms, hash maps, unit testing, and implementation-focused programming assignments. It demonstrates correctness, problem decomposition, and a disciplined approach to writing and validating code.",
+        "A report-style summary of CSE 331 coursework showing how algorithm design, data structures, and tested Python implementations support later work in data science and analytics.",
       repoUrl: "https://github.com/austi20/CSE331-SS26",
       detailPage: "cse331-coursework.html",
       heroSummary:
-        "A structured repository of data-structure and algorithm assignments presented as evidence of tested implementation skill, careful problem solving, and strong software fundamentals.",
+        "A course report on CSE 331 that highlights assignments most relevant to data science: efficient data organization, recursive reasoning, correctness under test, and algorithmic tradeoff analysis.",
       executiveSummary:
-        "This repository collects coursework from CSE 331 at Michigan State University, focused on algorithms and data structures in Python. Rather than treating it like a class archive, this page frames it as proof of implementation discipline: linked lists, hash tables, testing, and assignment-driven problem solving, with visible evidence of passing tests and strong project results.",
+        "CSE 331 at Michigan State University focused on building algorithms and data structures from scratch in Python, then validating them with formal tests. This page treats the repository as a class report rather than a standalone project description, emphasizing the parts of the course that directly support data science work: complexity-aware design, hierarchical data traversal, hash-based lookup, and reliable implementation under clear specifications.",
       atAGlance: [
         {
-          label: "Problem",
-          value: "Build reliable core data structures and prove correctness"
+          label: "Course focus",
+          value: "Algorithms, data structures, and tested Python implementation"
         },
         {
-          label: "Methods",
-          value: "Python implementations, tests, assignment specifications"
+          label: "Relevant evidence",
+          value: "Projects 1 and 3, plus tree-based coding challenges"
         },
         {
-          label: "Outcome",
-          value: "A clear record of foundational software engineering skill"
+          label: "Data science takeaway",
+          value: "Better performance reasoning, cleaner data handling, stronger validation habits"
         }
       ],
       overview: {
         paragraphs: [
-          "This repository is different from the other project pages because it is not one application. Instead, it is a portfolio of implementation work that shows how core computer science concepts were translated into working code.",
-          "For a recruiter or hiring manager, the value is in the pattern: reading a spec, building the data structure correctly, and verifying the result with tests."
+          "This page summarizes CSE 331 as a course report instead of presenting it like one finished product. The repository is a record of assignments completed over the semester, with each one reinforcing a different part of algorithmic thinking.",
+          "For data science, that matters because modeling and analysis are only part of the workflow. The surrounding work still depends on efficient data structures, recursive reasoning, clean transformations, and confidence that the code behaves correctly on edge cases."
         ]
       },
       objective: {
         paragraphs: [
-          "The objective of the coursework was to build strong software foundations through implementation-focused assignments rather than only theory.",
-          "From a portfolio perspective, the value is that the repository shows consistency, correctness, and the ability to work through increasingly complex data structure problems."
+          "The course objective was to move beyond theory and implement foundational structures directly, with required time and space complexity targets.",
+          "From a portfolio perspective, the strongest takeaway is that the class built habits that transfer well into analytics and machine learning workflows: choosing the right structure, reasoning about scale, and validating outputs with tests instead of intuition."
         ],
         bullets: [
-          "Implement classic data structures correctly",
-          "Use tests and specifications to validate behavior",
-          "Demonstrate disciplined, readable Python problem solving"
+          "Implement core structures and algorithms under explicit complexity constraints",
+          "Use tests, specs, and scored deliverables to verify correctness",
+          "Connect low-level implementation practice to later data science problem solving"
         ]
       },
       dataset: {
         paragraphs: [
-          "This repository does not use a traditional dataset. Instead, the project materials are assignment specifications, starter files, tests, and finished Python solutions.",
-          "That still matters to a reviewer because it shows the inputs and constraints the code was built against, which makes the implementation process easier to evaluate."
+          "This course report does not center on a traditional dataset. The source material is the assignment set itself: specifications, test files, starter code, finished solutions, and README-based score reports.",
+          "That format still works well for a portfolio because it shows the constraints each solution had to meet and makes performance and correctness visible in a way that screenshots alone cannot."
         ],
         bullets: [
-          "Coding challenges and larger data-structure projects",
-          "Specifications, tests, and reflection files included in the repo tree",
-          "Visible scoring evidence in project readme files"
+          "Coding Challenges folder for focused algorithm exercises",
+          "Projects folder for larger implementations such as doubly linked lists and hash tables",
+          "README score reports showing assignment-level testing outcomes"
         ]
       },
       approach: {
         paragraphs: [
-          "The work in this repository is strongest when viewed as a progression of problem-solving maturity rather than as a single deliverable.",
-          "Assignments moved from basic pointer and structure operations to more complex hashing and application-style extensions."
+          "The clearest way to read the course is through a few representative assignments that align with data science-adjacent skills.",
+          "The selection below emphasizes data organization, tree traversal, hashing, and implementation discipline rather than trying to summarize every file in the repository."
         ],
         steps: [
           {
-            title: "Implement the required data structures",
+            title: "Project 1: doubly linked lists and multilevel flattening",
             description:
-              "Projects included linked-list and hash-table work that required careful control over references, state, insertion, removal, lookup, and resizing behavior."
+              "Project 1 focused on linked-list operations such as insertion, removal, reversal, and a multilevel flattening task called dream_escaper. That work is relevant to data science because hierarchical and nested structures appear in real data-wrangling tasks, and the project explicitly connects multilevel structures to pandas-style indexing."
           },
           {
-            title: "Validate behavior with tests",
+            title: "Project 3: hash tables and lookup-driven applications",
             description:
-              "The repository includes unit tests and scored readme files, which makes correctness visible instead of asking the viewer to trust the implementation on appearance alone."
+              "Project 3 required implementing a hash table from scratch, then applying it to duplicate-image detection and substring-permutation search. Those tasks map well to analytics engineering and data science because fast lookup, grouping, and pattern matching are common building blocks in data pipelines."
           },
           {
-            title: "Apply the structures to practical tasks",
+            title: "Coding Challenges 7 and 8: recursive tree reasoning",
             description:
-              "Later exercises used the data structures in small applications, such as duplicate grouping and fan-chant matching, which shows transfer beyond textbook definitions."
+              "CC7 asked for branch-sum traversal on a binary tree, while CC8 evaluated arithmetic formula trees. Together they show recursive decomposition, ordered traversal, and bottom-up computation, all of which support later work with tree models, parsers, and structured data transformations."
           }
         ]
       },
       results: {
         paragraphs: [
-          "The main result of this repository is evidence: the projects show that the code worked under assignment tests and that the complexity of the problems increased over time.",
-          "That is especially useful in a portfolio because foundational implementation skill is often harder to display than finished UI work."
+          "The strongest outcomes are visible in the repository's assignment reports and in the progression of topics across the semester.",
+          "Rather than one headline metric, the value here is a pattern of tested correctness on increasingly complex problems that support later technical work in data science."
         ],
         highlights: [
           {
             label: "Project 1",
             value: "All listed tests passed",
             description:
-              "The doubly linked list assignment passed the reported tests for insertion, removal, conversion, searching, reversing, and the application problem."
+              "The README reports passing every listed test for the doubly linked list assignment, including insertion, removal, conversion, searching, reversing, and the multilevel dream_escaper application."
           },
           {
             label: "Project 3",
             value: "100 / 100",
             description:
-              "The hash table project earned full credit, showing strong performance on both core table behavior and the related application tasks."
+              "The hash table project earned full credit across core table operations plus both applied tasks: display_duplicates and generate_fan_chants."
           },
           {
-            label: "Language consistency",
-            value: "Python repository",
+            label: "Selected CCs",
+            value: "Tree traversal and evaluation",
             description:
-              "The repository provides a concentrated view of implementation growth in one language, which makes it easier to review progression and style."
+              "CC7 and CC8 extend the course beyond containers into recursive tree processing, reinforcing traversal logic and computational reasoning that are useful in data-focused problem solving."
           }
         ]
       },
       insights: {
         paragraphs: [
-          "What makes this repository useful in a recruiting context is how clearly it shows software fundamentals."
+          "The course is most valuable in a data science portfolio because it explains where the technical discipline underneath analytics work came from."
         ],
         bullets: [
-          "The code demonstrates careful handling of low-level structure behavior, not just high-level scripting.",
-          "Tests and scoring evidence make correctness more visible than a typical course repo summary would.",
-          "The assignments progress from basic structure operations to more advanced hashing and application-style extensions.",
-          "The repository shows the ability to read specifications and implement exactly against them.",
-          "Why this matters: strong software fundamentals make later analytics, machine learning, and application work more reliable."
+          "Linked-list and tree assignments strengthen reasoning about structure, traversal order, and edge cases in hierarchical data.",
+          "Hash-table work supports the kind of grouping, deduplication, and lookup-heavy tasks that appear in data cleaning and feature preparation.",
+          "Repeated complexity targets build the habit of asking whether a solution will still perform when inputs scale.",
+          "Tests and score reports make correctness explicit, which mirrors the need to validate data workflows before trusting downstream analysis.",
+          "The repository shows that the data science work in this portfolio is backed by solid algorithmic foundations, not only library-level usage."
         ]
       },
       repository: {
         paragraphs: [
-          "The GitHub repository remains available for anyone who wants to inspect the assignment structure, tests, and full solutions in more detail."
+          "The GitHub repository is available for anyone who wants to inspect the assignment specifications, test files, solution code, and score reports behind this class summary."
         ]
       },
       nextSteps: {
         paragraphs: [
-          "The clearest improvement would be to make the repository easier for an outside reviewer to scan without prior course context."
+          "The page now reads as a course report, but the repository itself could still be organized more clearly for an outside reviewer."
         ],
         bullets: [
-          "Add a root-level README that summarizes the strongest assignments and lessons learned",
-          "Create a higher-level index of projects, topics, and test results",
-          "Add short reflective notes on time complexity and tradeoffs for the major structures",
-          "Surface a few representative test cases for faster reviewer understanding"
+          "Add a root-level report summary that links each major assignment to the skill it developed",
+          "Create a table that maps projects and coding challenges to data-science-relevant concepts such as hashing, recursion, and complexity analysis",
+          "Add short reflections on how each assignment supports later analytics or machine learning work",
+          "Surface a few representative tests so reviewers can quickly see how correctness was validated"
         ]
       },
       plainOverview:
-        "This repository is a structured collection of university programming assignments from CSE 331 at Michigan State. It is less like a single app and more like a record of how core computer science skills were built through implementation work, test-driven validation, and increasingly complex data structure problems.",
+        "This CSE 331 repository is best read as a course report on algorithmic foundations. It documents how tested Python assignments in linked lists, hash tables, and binary trees supported the kind of disciplined reasoning that later data science work depends on.",
       quickFacts: [
         { label: "Course", value: "CSE 331: Algorithms and Data Structures" },
         { label: "Language", value: "Python" },
-        { label: "Evidence", value: "Project and challenge test results included" }
+        { label: "Evidence", value: "Project score reports and challenge specs included" }
       ],
-      findingsHeading: "What this repository shows",
+      findingsHeading: "What this class report shows",
       findings: [
-        "The work progresses from core linked-list operations to more advanced hash-table based applications.",
-        "Assignments include unit tests and scored readme files, which makes correctness visible to reviewers.",
-        "The repository demonstrates problem decomposition, data structure design, and disciplined implementation rather than only finished UI projects.",
-        "Two visible examples are a doubly linked list project with all listed tests passing and a hash table project that earned full credit in the provided results file."
+        "The course progresses from core linked-list operations to hashing and recursive tree problems that support later data-oriented computing.",
+        "Assignments include tests, specs, and scored README files, which makes correctness visible instead of implied.",
+        "Project 1 connects nested structures to pandas-style indexing through the dream_escaper application problem.",
+        "Project 3 shows full-credit performance on hash-table behavior plus duplicate detection and pattern-search applications."
       ],
       readmeSections: [
         {
-          title: "How the repository is organized",
+          title: "How the course evidence is organized",
           paragraphs: [
-            "The coursework repo is divided into coding challenges and larger projects instead of one top-level README-driven application.",
-            "Examples in the tree include a doubly linked list project, a hash table project, tests, specifications, and reflection files."
+            "The repository is divided into Coding Challenges and Projects rather than one application folder.",
+            "That split works well for a class report because it separates focused algorithm drills from larger implementation assignments."
           ]
         },
         {
-          title: "Examples of assignment topics",
+          title: "Assignments most relevant to data science",
           bullets: [
-            "Doubly linked list operations such as push, pop, reverse, and multi-level flattening",
-            "Hash table design with insertion, lookup, deletion, resizing, and application problems",
-            "Unit testing and implementation against assignment specifications"
+            "Project 1 doubly linked lists, including multilevel flattening tied in the spec to pandas-style structures",
+            "Project 3 hash tables, duplicate-image grouping, and permutation-based substring search",
+            "CC7 branch sums and CC8 formula-tree evaluation for recursive binary-tree reasoning"
           ]
         },
         {
           title: "Why this matters for a portfolio",
           paragraphs: [
-            "Recruiters often want proof that course knowledge turned into working code. This repository shows that through tested implementations, not just lecture notes or screenshots."
+            "This material shows that the data work elsewhere in the portfolio rests on more than notebooks and libraries. It is backed by coursework in performance, structure design, and verified implementation."
           ]
         },
         {
-          title: "Project evidence included in the repo",
+          title: "Visible evidence in the repository",
           bullets: [
-            "Project 1 README reports all listed linked-list tests passing",
+            "Project 1 README reports all listed doubly linked list tests passing",
             "Project 3 README reports a total score of 100 out of 100",
-            "Repository language summary is fully Python"
+            "The repository language summary is fully Python"
           ]
         }
       ],
       snippets: [
         {
-          title: "A core linked-list insertion method",
+          title: "Project 1: constant-time linked-list insertion",
           language: "python",
           explanation:
-            "This method is small, but it shows the kind of pointer-management work that the course emphasized. It updates head and tail references correctly when values are inserted at either end of the list.",
+            "This method captures one of the course's core themes: update structure state carefully and keep the operation O(1). That mindset carries into data engineering work where the shape and cost of a transformation both matter.",
           code: `def push(self, val, back=True):
     new = Node(val)
     if self.size == 0:
@@ -1139,10 +1139,10 @@ ORDER BY monthly_revenue DESC;`
     self.size += 1`
         },
         {
-          title: "Using a hash table to track duplicate images",
+          title: "Project 3: hashing for duplicate-image grouping",
           language: "python",
           explanation:
-            "This application problem uses hashing to compare image signatures, then groups duplicate filenames under the first original file that appeared.",
+            "This application highlights a more direct bridge to data science work. It normalizes rotated image signatures, uses hashing for fast lookup, and groups duplicates under the earliest canonical file.",
           code: `for hashes, filename in zip(data, filenames):
     rotations = [tuple(hashes[i:] + hashes[:i]) for i in range(len(hashes))]
     signature = str(min(rotations))

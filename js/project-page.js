@@ -198,8 +198,32 @@
 
   document.title = project.title + " | Gunnar Austin";
 
-  var portfolioAnchor = project.section === "coursework" ? "../index.html#coursework" : "../index.html#projects";
-  var pageLabel = project.section === "coursework" ? "Coursework Case Study" : "Project Case Study";
+  var isCoursework = project.section === "coursework";
+  var portfolioAnchor = isCoursework ? "../index.html#coursework" : "../index.html#projects";
+  var pageLabel = isCoursework ? "Course Report" : "Project Case Study";
+  var sectionLabels = isCoursework
+    ? {
+        overview: "Course overview",
+        objective: "Learning objective",
+        dataset: "Source materials",
+        approach: "Representative coursework",
+        results: "Outcomes",
+        insights: "Relevance to data science",
+        codeHighlights: "Selected coursework highlights",
+        repository: "Repository",
+        nextSteps: "Report improvements"
+      }
+    : {
+        overview: "Project overview",
+        objective: "Business objective",
+        dataset: "Dataset",
+        approach: "Approach",
+        results: "Results",
+        insights: "Key insights",
+        codeHighlights: "Code highlights",
+        repository: "Repository link",
+        nextSteps: "Next steps / future improvements"
+      };
 
   mount.innerHTML = [
     '<section class="detail-hero detail-hero-polished">',
@@ -225,32 +249,36 @@
     "</section>",
     '<section class="detail-grid">',
     '  <div class="detail-main-stack">',
-    renderContentSection("Project overview", project.overview),
+    renderContentSection(sectionLabels.overview, project.overview),
     renderVisualSections(project.visualSections, "after-overview"),
-    renderContentSection("Business objective", project.objective),
+    renderContentSection(sectionLabels.objective, project.objective),
     renderVisualSections(project.visualSections, "after-objective"),
-    renderContentSection("Dataset", project.dataset),
+    renderContentSection(sectionLabels.dataset, project.dataset),
     renderVisualSections(project.visualSections, "after-dataset"),
-    renderContentSection("Approach", project.approach),
+    renderContentSection(sectionLabels.approach, project.approach),
     renderVisualSections(project.visualSections, "after-approach"),
-    renderContentSection("Results", project.results),
+    renderContentSection(sectionLabels.results, project.results),
     renderVisualSections(project.visualSections, "after-results"),
-    renderContentSection("Key insights", project.insights),
+    renderContentSection(sectionLabels.insights, project.insights),
     renderVisualSections(project.visualSections, "after-insights"),
     '<section class="detail-section">',
-    "  <h2>Code highlights</h2>",
-    '  <p class="section-copy section-copy-tight">These examples are intentionally short. They are included to show how the project works without overwhelming the reader with raw notebook or script output.</p>',
+    "  <h2>" + escapeHtml(sectionLabels.codeHighlights) + "</h2>",
+    '  <p class="section-copy section-copy-tight">' + escapeHtml(
+      isCoursework
+        ? "These examples are intentionally short. They are included to show the type of implementation work completed in the course without overwhelming the reader with raw repository output."
+        : "These examples are intentionally short. They are included to show how the project works without overwhelming the reader with raw notebook or script output."
+    ) + "</p>",
     '  <div class="snippet-grid">',
     renderSnippets(project.snippets),
     "  </div>",
     "</section>",
     '<section class="detail-section">',
-    "  <h2>Repository link</h2>",
+    "  <h2>" + escapeHtml(sectionLabels.repository) + "</h2>",
     renderParagraphs(project.repository && project.repository.paragraphs),
     '  <a class="button button-primary" href="' + escapeHtml(project.repoUrl) + '" target="_blank" rel="noreferrer">Open repository</a>',
     "</section>",
     '<section class="detail-section">',
-    "  <h2>Next steps / future improvements</h2>",
+    "  <h2>" + escapeHtml(sectionLabels.nextSteps) + "</h2>",
     renderParagraphs(project.nextSteps && project.nextSteps.paragraphs),
     renderBullets(project.nextSteps && project.nextSteps.bullets),
     "</section>",
