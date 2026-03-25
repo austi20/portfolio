@@ -28,7 +28,7 @@
       renderTags(project.technologies),
       "    </ul>",
       '    <div class="project-actions">',
-      '      <a class="button button-primary button-small" href="projects/' + escapeHtml(project.detailPage) + '">Project page</a>',
+      '      <a class="button button-primary button-small" href="projects/' + escapeHtml(project.detailPage) + '">View case study</a>',
       '      <a class="project-link" href="' + escapeHtml(project.repoUrl) + '" target="_blank" rel="noreferrer">View repository</a>',
       "    </div>",
       "  </div>",
@@ -45,7 +45,7 @@
       renderTags(project.technologies),
       "      </ul>",
       '      <div class="project-actions">',
-      '        <a class="button button-primary button-small" href="projects/' + escapeHtml(project.detailPage) + '">Project page</a>',
+      '        <a class="button button-primary button-small" href="projects/' + escapeHtml(project.detailPage) + '">View report</a>',
       '        <a class="project-link" href="' + escapeHtml(project.repoUrl) + '" target="_blank" rel="noreferrer">View repository</a>',
       "      </div>"
     ].join("");
@@ -61,6 +61,7 @@
 
   var projectGrid = document.getElementById("project-grid");
   if (projectGrid) {
+    // The homepage includes static fallback cards, then upgrades them with the shared project data when scripts load.
     projectGrid.innerHTML = personalProjects.map(renderProjectCard).join("");
   }
 

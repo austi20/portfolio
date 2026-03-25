@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="https://portfolio.gunnar-austin.workers.dev/assets/favicon.png">
   <meta
     name="description"
-    content="Portfolio showcasing coursework, personal projects, and technical work in programming, SQL, data analysis, and machine learning."
+    content="Recruiter focused portfolio with data science, analytics, SQL, and machine learning case studies plus supporting coursework."
   >
   <meta name="author" content="Gunnar Austin">
   <meta name="robots" content="index,follow,max-image-preview:large">
@@ -21,7 +21,7 @@
   <meta property="og:title" content="Gunnar Austin | Data Science Portfolio">
   <meta
     property="og:description"
-    content="Portfolio showcasing coursework, personal projects, and technical work in programming, SQL, data analysis, and machine learning."
+    content="Recruiter focused portfolio with data science, analytics, SQL, and machine learning case studies plus supporting coursework."
   >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://portfolio.gunnar-austin.workers.dev/">
@@ -35,7 +35,7 @@
   <meta name="twitter:title" content="Gunnar Austin | Data Science Portfolio">
   <meta
     name="twitter:description"
-    content="Portfolio showcasing coursework, personal projects, and technical work in programming, SQL, data analysis, and machine learning."
+    content="Recruiter focused portfolio with data science, analytics, SQL, and machine learning case studies plus supporting coursework."
   >
   <meta name="twitter:image" content="https://portfolio.gunnar-austin.workers.dev/assets/og-image.jpg">
   <meta name="twitter:image:alt" content="Social preview for Gunnar Austin's data science portfolio">
@@ -61,11 +61,7 @@
           <p class="eyebrow">Data Science Student</p>
           <h1>Gunnar Austin</h1>
           <p class="hero-text">
-            I&apos;m a data science student at Michigan State University
-            with interests in programming, SQL, data analysis, machine learning, and applied
-            problem solving. This portfolio highlights selected personal projects and
-            coursework that reflect my experience building software, working with data,
-            and developing practical technical solutions.
+            I&apos;m a data science student at Michigan State University. This portfolio highlights applied analytics, machine learning, SQL, and technical foundation work that is easy for recruiters to scan quickly.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#projects">View Projects</a>
@@ -100,18 +96,118 @@
         </aside>
       </section>
 
+      <section class="signal-band" aria-label="Recruiter highlights">
+        <div class="detail-section">
+          <div class="signal-grid">
+            <article class="signal-card">
+              <p class="fact-label">Applied analytics</p>
+              <p class="signal-value">Business focused case studies</p>
+              <p>Projects connect modeling and SQL work to churn, ridership, sales, and market analysis.</p>
+            </article>
+            <article class="signal-card">
+              <p class="fact-label">Technical range</p>
+              <p class="signal-value">Python, SQL, modeling</p>
+              <p>The portfolio combines data cleaning, visualization, machine learning, and software fundamentals.</p>
+            </article>
+            <article class="signal-card">
+              <p class="fact-label">Foundation</p>
+              <p class="signal-value">Tested implementation</p>
+              <p>Coursework in algorithms and data structures supports the applied analytics work elsewhere on the site.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="project-section" id="projects">
         <div class="section-heading">
           <p class="eyebrow">Projects</p>
           <h2>Personal Projects</h2>
           <p class="section-copy">
-            A selection of personal work focused on predictive modeling, SQL, data analysis,
-            and applied programming. Each project keeps its GitHub repository link on this page
-            and now also has a dedicated website page written for non-technical visitors.
+            A selection of applied work in predictive modeling, SQL, data analysis, and business focused reporting. Each project has a short case study page and a direct repository link.
           </p>
         </div>
 
-        <div class="project-grid" id="project-grid"></div>
+        <div class="project-grid" id="project-grid">
+          <article class="project-card">
+            <div class="project-art art-churn" aria-hidden="true">
+              <span>ML</span>
+            </div>
+            <div class="project-body">
+              <p class="project-type">Machine Learning Case Study</p>
+              <h3>Telco Customer Churn Prediction</h3>
+              <p>Churn modeling case study that connects customer risk scores to retention actions and business impact.</p>
+              <ul class="tag-list" aria-label="Technologies">
+                <li>Python</li>
+                <li>pandas</li>
+                <li>scikit learn</li>
+              </ul>
+              <div class="project-actions">
+                <a class="button button-primary button-small" href="projects/telco-customer-churn.html">View case study</a>
+                <a class="project-link" href="https://github.com/austi20/Telco-Customer-Churn-Model" target="_blank" rel="noreferrer">View repository</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art art-urban" aria-hidden="true">
+              <span>DA</span>
+            </div>
+            <div class="project-body">
+              <p class="project-type">Data Analysis and Modeling</p>
+              <h3>NYC Taxi Demand and Rider Behavior Analysis</h3>
+              <p>Transportation analytics case study on demand patterns, route concentration, fares, and model limits.</p>
+              <ul class="tag-list" aria-label="Technologies">
+                <li>Jupyter</li>
+                <li>pandas</li>
+                <li>matplotlib</li>
+              </ul>
+              <div class="project-actions">
+                <a class="button button-primary button-small" href="projects/nyc-taxi-demand.html">View case study</a>
+                <a class="project-link" href="https://github.com/austi20/NYC-Taxi-Demand-and-Rider-Behavior-Analysis" target="_blank" rel="noreferrer">View repository</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art art-housing" aria-hidden="true">
+              <span>FM</span>
+            </div>
+            <div class="project-body">
+              <p class="project-type">Forecasting and Market Analysis</p>
+              <h3>Global Housing Market Forecasting</h3>
+              <p>Cross country housing analysis that compares pressure, affordability, and directional forecasts through 2035.</p>
+              <ul class="tag-list" aria-label="Technologies">
+                <li>Python</li>
+                <li>NumPy</li>
+                <li>Matplotlib</li>
+              </ul>
+              <div class="project-actions">
+                <a class="button button-primary button-small" href="projects/global-housing-market.html">View case study</a>
+                <a class="project-link" href="https://github.com/austi20/Global-Housing-Market-Predictor" target="_blank" rel="noreferrer">View repository</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art art-sql" aria-hidden="true">
+              <span>SQL</span>
+            </div>
+            <div class="project-body">
+              <p class="project-type">SQL and Sales Analysis</p>
+              <h3>SQL Sales Analysis with Chinook</h3>
+              <p>Business reporting project that turns transactional sales data into customer, market, and product insights.</p>
+              <ul class="tag-list" aria-label="Technologies">
+                <li>SQL</li>
+                <li>SQLite</li>
+                <li>Data Analysis</li>
+              </ul>
+              <div class="project-actions">
+                <a class="button button-primary button-small" href="projects/sql-sales-analysis.html">View case study</a>
+                <a class="project-link" href="https://github.com/austi20/sql-sales-analysis-with-chinook" target="_blank" rel="noreferrer">View repository</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="about-section" id="coursework">
@@ -119,21 +215,32 @@
           <p class="eyebrow">Coursework</p>
           <h2>Selected Academic Work</h2>
           <p class="section-copy">
-            Coursework has been an important part of developing my foundation in algorithms,
-            data structures, and analytical problem solving. This repository reflects that
-            progression through structured Python work and tested implementations.
+            Coursework is included as supporting evidence, especially where it strengthens analytics, data science, and technical problem solving.
           </p>
         </div>
 
         <div class="about-grid">
-          <div class="about-panel" id="coursework-detail-card"></div>
+          <div class="about-panel" id="coursework-detail-card">
+            <p class="coursework-type">Course Report</p>
+            <h3>CSE 331 Class Report</h3>
+            <p>Algorithms and data structures coursework framed as technical foundation for applied analytics work, not as a homework archive.</p>
+            <ul class="tag-list" aria-label="Technologies">
+              <li>Python</li>
+              <li>Data Structures</li>
+              <li>Unit Testing</li>
+            </ul>
+            <div class="project-actions">
+              <a class="button button-primary button-small" href="projects/cse331-coursework.html">View report</a>
+              <a class="project-link" href="https://github.com/austi20/CSE331-SS26" target="_blank" rel="noreferrer">View repository</a>
+            </div>
+          </div>
 
           <div class="about-panel focus-panel">
             <h3>Core Focus Areas</h3>
             <div class="focus-grid">
               <div class="focus-card">
                 <strong>Software Development</strong>
-                <span>Python, C++, structured problem solving, and implementation-focused coursework.</span>
+                <span>Python, C++, structured problem solving, and implementation focused coursework.</span>
               </div>
               <div class="focus-card">
                 <strong>Data Analysis</strong>
@@ -153,7 +260,7 @@
           <p class="eyebrow">Contact</p>
           <h2>Let&apos;s connect</h2>
           <p>
-            I&apos;m interested in internships, collaborative projects, and entry-level
+            I&apos;m interested in internships, collaborative projects, and entry level
             opportunities in software development, data analysis, and machine learning.
             If my work aligns with what you&apos;re building, I&apos;d be glad to connect.
           </p>

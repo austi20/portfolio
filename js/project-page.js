@@ -59,6 +59,39 @@
     ].join("");
   }
 
+  function renderQuickFacts(facts) {
+    if (!facts || !facts.length) {
+      return "";
+    }
+
+    return [
+      '<div class="fact-grid quick-fact-grid">',
+      facts.map(function (fact) {
+        return [
+          '<article class="fact-card">',
+          '  <p class="fact-label">' + escapeHtml(fact.label) + "</p>",
+          '  <p class="fact-value">' + escapeHtml(fact.value) + "</p>",
+          "</article>"
+        ].join("");
+      }).join(""),
+      "</div>"
+    ].join("");
+  }
+
+  function renderFindingCards(findings) {
+    if (!findings || !findings.length) {
+      return "";
+    }
+
+    return [
+      '<ul class="finding-list">',
+      findings.map(function (finding) {
+        return '<li>' + escapeHtml(finding) + "</li>";
+      }).join(""),
+      "</ul>"
+    ].join("");
+  }
+
   function renderResultHighlights(highlights) {
     if (!highlights || !highlights.length) {
       return "";
@@ -174,6 +207,124 @@
     ].join("");
   }
 
+  function renderQuickScan(project) {
+    if ((!project.quickFacts || !project.quickFacts.length) && (!project.findings || !project.findings.length)) {
+      return "";
+    }
+
+    return [
+      '<section class="detail-section quickscan-section">',
+      "  <h2>Quick scan</h2>",
+      '  <div class="quickscan-grid">',
+      '    <div class="quickscan-panel">',
+      '      <p class="project-type">Fast facts</p>',
+      renderQuickFacts(project.quickFacts),
+      "    </div>",
+      '    <div class="quickscan-panel">',
+      '      <p class="project-type">' + escapeHtml(project.findingsHeading || "Why it matters") + "</p>",
+      renderFindingCards(project.findings),
+      "    </div>",
+      "  </div>",
+      "</section>"
+    ].join("");
+  }
+
+  function renderSkillMap(section) {
+    if (!section || !section.rows || !section.rows.length) {
+      return "";
+    }
+
+    return [
+      '<section class="detail-section skillmap-section">',
+      "  <h2>" + escapeHtml(section.title) + "</h2>",
+      section.intro
+        ? '  <p class="section-copy section-copy-tight">' + escapeHtml(section.intro) + "</p>"
+        : "",
+      '  <div class="table-wrap">',
+      '    <table class="mapping-table">',
+      '      <thead>',
+      '        <tr>',
+      '          <th scope="col">' + escapeHtml(section.columns && section.columns[0] ? section.columns[0] : "Course topic") + "</th>",
+      '          <th scope="col">' + escapeHtml(section.columns && section.columns[1] ? section.columns[1] : "Applied relevance") + "</th>",
+      "        </tr>",
+      "      </thead>",
+      "      <tbody>",
+      section.rows.map(function (row) {
+        return [
+          "        <tr>",
+          '          <th scope="row">' + escapeHtml(row.topic) + "</th>",
+          '          <td>' + escapeHtml(row.relevance) + "</td>",
+          "        </tr>"
+        ].join("");
+      }).join(""),
+      "      </tbody>",
+      "    </table>",
+      "  </div>",
+      "</section>"
+    ].join("");
+  }
+
+  function renderPortfolioConnections(section, projects) {
+    if (!section || !section.items || !section.items.length) {
+      return "";
+    }
+
+    return [
+      '<section class="detail-section">',
+      "  <h2>" + escapeHtml(section.title) + "</h2>",
+      section.intro
+        ? '  <p class="section-copy section-copy-tight">' + escapeHtml(section.intro) + "</p>"
+        : "",
+      '  <div class="connection-grid">',
+      section.items.map(function (item) {
+        var linkedProject = projects.find(function (project) {
+          return project.slug === item.slug;
+        });
+        var href = linkedProject ? linkedProject.detailPage : "#";
+        var title = item.title || (linkedProject ? linkedProject.title : "Related page");
+
+        return [
+          '    <article class="connection-card">',
+          item.label ? '      <p class="project-type">' + escapeHtml(item.label) + "</p>" : "",
+          "      <h3>" + escapeHtml(title) + "</h3>",
+          "      <p>" + escapeHtml(item.description) + "</p>",
+          linkedProject
+            ? '      <a class="project-link" href="' + escapeHtml(href) + '">Open page</a>'
+            : "",
+          "    </article>"
+        ].join("");
+      }).join(""),
+      "  </div>",
+      "</section>"
+    ].join("");
+  }
+
+  function renderChallengeProof(section) {
+    if (!section || !section.items || !section.items.length) {
+      return "";
+    }
+
+    return [
+      '<section class="detail-section">',
+      "  <h2>" + escapeHtml(section.title) + "</h2>",
+      section.intro
+        ? '  <p class="section-copy section-copy-tight">' + escapeHtml(section.intro) + "</p>"
+        : "",
+      '  <div class="compact-card-grid">',
+      section.items.map(function (item) {
+        return [
+          '    <article class="signal-card compact-signal-card">',
+          '      <p class="fact-label">' + escapeHtml(item.label) + "</p>",
+          item.value ? '      <p class="signal-value">' + escapeHtml(item.value) + "</p>" : "",
+          '      <p>' + escapeHtml(item.description) + "</p>",
+          "    </article>"
+        ].join("");
+      }).join(""),
+      "  </div>",
+      "</section>"
+    ].join("");
+  }
+
   var slug = document.body.getAttribute("data-project-slug");
   var projects = window.portfolioProjects || [];
   var project = projects.find(function (entry) {
@@ -225,6 +376,7 @@
         nextSteps: "Next steps / future improvements"
       };
 
+  // Each HTML page ships with fallback content so this script acts as progressive enhancement rather than the only source of meaning.
   mount.innerHTML = [
     '<section class="detail-hero detail-hero-polished">',
     '  <div class="detail-hero-copy">',
@@ -247,6 +399,8 @@
     "    </div>",
     "  </aside>",
     "</section>",
+    renderQuickScan(project),
+    renderSkillMap(project.skillMap),
     '<section class="detail-grid">',
     '  <div class="detail-main-stack">',
     renderContentSection(sectionLabels.overview, project.overview),
@@ -259,8 +413,10 @@
     renderVisualSections(project.visualSections, "after-approach"),
     renderContentSection(sectionLabels.results, project.results),
     renderVisualSections(project.visualSections, "after-results"),
+    renderChallengeProof(project.challengeProof),
     renderContentSection(sectionLabels.insights, project.insights),
     renderVisualSections(project.visualSections, "after-insights"),
+    renderPortfolioConnections(project.portfolioConnections, projects),
     '<section class="detail-section">',
     "  <h2>" + escapeHtml(sectionLabels.codeHighlights) + "</h2>",
     '  <p class="section-copy section-copy-tight">' + escapeHtml(
